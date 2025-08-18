@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,50 +6,95 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Works - Eric Edwards</title>
+    <meta name="description" content="Explore Eric Edwards' web development projects, including portfolio, Port Intel, and Card Game.">
+    <meta name="keywords" content="Eric Edwards, Projects, Portfolio, Web Development, Port Intel, Card Game, Full-Stack">
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="profilepic.png" type="image/png">
     <script src="https://cdn.jsdelivr.net/npm/p5@1.9.0/lib/p5.min.js"></script>
     <script src="sketch.js"></script>
     <script src="script.js" defer></script>
+    <style>
+        @media (max-width: 700px) {
+            nav {
+                flex-direction: column;
+                gap: 1rem;
+                padding: 0.5rem;
+            }
+            .project-list {
+                flex-direction: column !important;
+                gap: 1rem !important;
+                align-items: stretch !important;
+            }
+            .project-card {
+                width: 95vw;
+                max-width: 100vw;
+                padding: 1rem;
+                margin: 0 auto;
+                font-size: 1rem;
+            }
+            h1 {
+                font-size: 1.5rem;
+            }
+            h2 {
+                font-size: 1.1rem;
+            }
+            footer {
+                font-size: 0.9rem;
+                padding: 0.5rem;
+            }
+        }
+        .active {
+            border-bottom: 2px solid #00bfff;
+        }
+    </style>
 </head>
 
 <body>
-    <div id="header">
+    <header id="header">
         <nav>
             <span id="siteName">Eric Edwards</span>
             <a href="index.html">Home</a>
             <a href="index.html#about">About</a>
-            <a href="work.html">Works</a>
+            <a href="work.html" class="active">Works</a>
             <a href="contact.html">Contact</a>
         </nav>
-    </div>
+    </header>
 
-    <div id="Works">
-        <h1>My Projects</h1>
-        <p>Below are some of my projects showcasing my skills and experience. Feel free to explore and learn more about
-            my work.</p>
-        <div class="project-list">
-            <div class="project-card">
-                <h2>Personal Portfolio</h2>
-                <p>This website! Built with HTML and CSS to showcase my work.</p>
-                <a href="https://ejhacks.github.io/Portfolio-Website/index.html" target="_blank" rel="noopener noreferrer"
-                    aria-label="View Personal Portfolio">View Project</a>
+    <main>
+        <section id="Works">
+            <h1>My Projects</h1>
+            <p>Below are some of my projects showcasing my skills and experience. Feel free to explore and learn more about my work.</p>
+            <div class="project-list">
+                <div class="project-card">
+                    <h2>Personal Portfolio</h2>
+                    <p>This website! Built with HTML and CSS to showcase my work.</p>
+                    <a href="https://ejhacks.github.io/Portfolio-Website/index.html" target="_blank" rel="noopener noreferrer" aria-label="View Personal Portfolio">View Project</a>
+                </div>
+                <div class="project-card">
+                    <h2>Port Intel</h2>
+                    <p>This project is actively in development, with ongoing improvements and feature additions.</p>
+                    <a href="https://ejhacks.github.io/Port-Intel/" target="_blank" rel="noopener noreferrer" aria-label="View Port Intel Project">View Project</a>
+                </div>
+                <div class="project-card">
+                    <h2>Card Game</h2>
+                    <p>This is a card game in progress with ongoing improvements and features.</p>
+                    <a href="https://ejhacks.github.io/Card-Game/" target="_blank" rel="noopener noreferrer" aria-label="View Card Game Project">View Project</a>
+                </div>
             </div>
-            <div class="project-card">
-                <h2>Port Intel</h2>
-                <p>This project is actively in development, with ongoing improvements and feature additions.</p>
-                <a href="https://ejhacks.github.io/Port-Intel/" target="_blank" rel="noopener noreferrer"
-                    aria-label="View Port Intel Project">View Project</a>
-            </div>
-            <div class="project-card">
-                <h2>Card Game</h2>
-                <p>This is a card game in progress with ongoing improvements and features.</p>
-                <a href="https://ejhacks.github.io/Card-Game/" target="_blank" rel="noopener noreferrer"
-                    aria-label="View Card Game Project">View Project</a>
-            </div>
+        </section>
+    </main>
 
-        </div>
+    <footer style="text-align:center; color:#aaa; margin-top:2rem;">
+        <small>&copy; 2025 Eric Edwards. All rights reserved.</small>
+    </footer>
 
+    <script>
+        // Highlight nav link for current page
+        document.querySelectorAll('#header nav a').forEach(link => {
+            if (window.location.pathname.endsWith(link.getAttribute('href')) || (link.getAttribute('href') === 'work.html')) {
+                link.classList.add('active');
+            }
+        });
+    </script>
 </body>
-
-
 </html>

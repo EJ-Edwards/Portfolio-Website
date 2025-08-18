@@ -1,46 +1,104 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
+    <title>Eric Edwards Portfolio</title>
+    <meta name="description" content="Portfolio website for Eric Edwards, a teen full-stack developer and software enthusiast. View projects, bio, and contact info.">
+    <meta name="keywords" content="Eric Edwards, Portfolio, Developer, Full-Stack, Projects, Software, Web, API, Python, JavaScript, HTML, CSS, Git, GitHub">
     <link rel="stylesheet" href="style.css">
-     <script src="https://cdn.jsdelivr.net/npm/p5@1.9.0/lib/p5.min.js"></script>
+    <link rel="icon" href="profilepic.png" type="image/png">
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.9.0/lib/p5.min.js"></script>
     <script src="sketch.js"></script>
     <script src="script.js" defer></script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        .active {
+            border-bottom: 2px solid #00bfff;
+        }
+        @media (max-width: 700px) {
+            nav {
+                flex-direction: column;
+                gap: 1rem;
+                padding: 0.5rem;
+            }
+            #pic {
+                width: 200px;
+                height: 200px;
+            }
+            .bio-container {
+                flex-direction: column;
+                padding: 1rem;
+            }
+            #profilepic {
+                margin-bottom: 1rem;
+            }
+            h1 {
+                font-size: 1.5rem;
+            }
+            h2 {
+                font-size: 1.1rem;
+            }
+            .bio-text {
+                font-size: 1rem;
+            }
+            footer {
+                font-size: 0.9rem;
+                padding: 0.5rem;
+            }
+        }
+    </style>
 </head>
 
 <body>
-    <div id="header">
+    <header id="header">
         <nav>
             <span id="siteName">Eric Edwards</span>
-            <a href="#">Home</a>
+            <a href="#" class="active">Home</a>
             <a href="#about">About</a>
             <a href="work.html">Works</a>
             <a href="contact.html">Contact</a>
         </nav>
-    </div>
+    </header>
 
-    <div id="about">
-        <h1>Hello, I'm Eric</h1>
-        <p>Teen Developer</p>
-    </div>
-    <div id="profilepic"> 
-        <img id="pic" src="profilepic.png" alt="Eric's Profile Picture">
+    <main>
+        <section id="about">
+            <h1>Hello, I'm Eric</h1>
+            <p>Teen Developer</p>
+        </section>
+        <section id="profilepic"> 
+            <img id="pic" src="profilepic.png" alt="Eric's Profile Picture" loading="lazy">
+        </section>
 
-    </div>
-
-    <div id="ShortBio">
-        <div class="bio-container">
-            <div class="bio-text">
-                <h2>About me</h2>
-                <p>Hi, I'm Eric and I'm a Full-Stacked developer and software enthusiast. My work focuses on building web tools, APIs, and researching cool tech.</p>
-                <p>I work with backend APIs, server projects, frontend development and web scraping—all while still in high school!</p>
-             <p> Skills: Python, JavaScript, HTML/CSS, Git, GitHub,</p>
-             <p> Currently Learning: Golang, TypeScript and Rust</p>
+        <section id="ShortBio">
+            <div class="bio-container">
+                <div class="bio-text">
+                    <h2>About me</h2>
+                    <p>Hi, I'm Eric and I'm a Full-Stack developer and software enthusiast. My work focuses on building web tools, APIs, and researching cool tech.</p>
+                    <p>I work with backend APIs, server projects, frontend development and web scraping—all while still in high school!</p>
+                    <p><strong>Skills:</strong> Python, JavaScript, HTML/CSS, Git, GitHub</p>
+                    <p><strong>Currently Learning:</strong> Golang, TypeScript, and Rust</p>
+                    <p><strong>Resume:</strong> <a href="#" download="Eric_Edwards_Resume.pdf" style="color:#00bfff;">Download PDF</a> (coming soon)</p>
+                </div>
             </div>
-        </div>
-    </div>
+        </section>
+    </main>
+
+    <footer style="text-align:center; color:#aaa; margin-top:2rem;">
+        <small>&copy; 2025 Eric Edwards. All rights reserved.</small>
+    </footer>
+
+    <script>
+        // Highlight nav link for current page
+        document.querySelectorAll('#header nav a').forEach(link => {
+            if (window.location.pathname.endsWith(link.getAttribute('href')) || (link.getAttribute('href') === '#' && window.location.pathname.endsWith('index.html'))) {
+                link.classList.add('active');
+            }
+        });
+    </script>
 </body>
 </html>
