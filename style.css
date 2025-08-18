@@ -1,3 +1,11 @@
+a {
+    transition: transform 0.2s;
+}
+.certificate-item a {
+    color: #00bfff;
+    text-decoration: none;
+    transition: color 0.2s;
+}
 
 body {
     display: flex;
@@ -120,8 +128,8 @@ body {
     border-radius: 100%;
     width: 500px;
     height: 500px;
-    
-    
+}
+
 @media (max-width: 700px) {
     nav {
         flex-direction: column;
@@ -184,8 +192,6 @@ body {
     }
 }
 
-}
-
 #profilepic {
     display: flex;
     justify-content: center;
@@ -238,4 +244,9 @@ h2, h1, p {
 }
 #header, main, section, footer {
     background: transparent;
+}
+
+
+a {
+    transition: transform 0.2s;
 }

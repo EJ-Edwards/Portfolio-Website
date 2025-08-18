@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificates - Eric Edwards</title>
+    <meta name="description" content="View certificates earned by Eric Edwards, full-stack developer.">
+    <meta name="keywords" content="Eric Edwards, Certificates, Portfolio, Developer, Awards">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.9.0/lib/p5.min.js"></script>
+    <script src="sketch.js"></script>
+    <script src="script.js" defer></script>
+    <link rel="icon" href="profilepic.png" type="image/png">
+    <style>
+        .certificates-list {
+            max-width: 600px;
+            margin: 2rem auto;
+            padding: 0;
+            list-style: none;
+        }
+
+        .certificate-item {
+            background: #181818;
+            margin-bottom: 1.5rem;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+            color: #fff;
+        }
+
+        .certificate-title {
+            font-size: 1.2em;
+            color: #00bfff;
+            margin-bottom: 8px;
+        }
+
+        .certificate-date {
+            font-size: 0.95em;
+            color: #aaa;
+        }
+
+        @media (max-width: 700px) {
+            .certificates-list {
+                max-width: 95vw;
+                padding: 0 0.5rem;
+            }
+
+            .certificate-item {
+                padding: 1rem;
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .certificates-list {
+                max-width: 98vw;
+            }
+
+            .certificate-item {
+                padding: 0.5rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header id="header">
+        <nav>
+            <span id="siteName">Eric Edwards</span>
+            <a href="index.html">Home</a>
+            <a href="index.html#about">About</a>
+            <a href="work.html">Works</a>
+            <a href="certificates.html" class="active">Certificates</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h1>My Certificates</h1>
+            <ul class="certificates-list">
+                <li class="certificate-item">
+                    <div class="certificate-title">Google Cybersecurity Professional Certificate</div>
+                    <div class="certificate-date">Date Awarded: 2025-08-16</div>
+                    <a href="https://www.credly.com/badges/b3c944f3-a931-45a7-b6eb-1d7bfbfb0558/public_url"
+                        target="_blank" style="color:#00bfff;">
+                        View Certificate
+                    </a>
+                </li>
+                <li class="certificate-item">
+                    <div class="certificate-title">Certificate Title 1</div>
+                    <div class="certificate-date">Date Awarded: YYYY-MM-DD</div>
+                </li>
+                <li class="certificate-item">
+                    <div class="certificate-title">Certificate Title 2</div>
+                    <div class="certificate-date">Date Awarded: YYYY-MM-DD</div>
+                </li>
+            </ul>
+        </section>
+    </main>
+
+    <footer style="text-align:center; color:#aaa; margin-top:2rem;">
+        <small>&copy; 2025 Eric Edwards. All rights reserved.</small>
+    </footer>
+
+    <script>
+        document.querySelectorAll('#header nav a').forEach(link => {
+            if (window.location.pathname.endsWith(link.getAttribute('href')) || link.getAttribute('href') === 'certificates.html') {
+                link.classList.add('active');
+            }
+        });
+    </script>
+</body>
+
+</html>
