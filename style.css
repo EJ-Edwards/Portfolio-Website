@@ -1,7 +1,10 @@
-body
-{  
+
+body {
     display: flex;
     flex-direction: column;
+    background: #181818;
+    color: #fff;
+    min-height: 100vh;
 }
 
 
@@ -119,6 +122,67 @@ body
     height: 500px;
     
     
+@media (max-width: 700px) {
+    nav {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 0.5rem;
+    }
+    #pic {
+        width: 100%;
+        max-width: 200px;
+        height: auto;
+    }
+    .bio-container {
+        flex-direction: column;
+        padding: 1rem;
+    }
+    .project-list {
+        flex-direction: column !important;
+        gap: 1rem !important;
+        align-items: stretch !important;
+    }
+    .project-card {
+        width: 100%;
+        max-width: 95vw;
+        font-size: 1rem;
+    }
+    .contact-card {
+        width: 100%;
+        max-width: 95vw;
+        font-size: 1rem;
+    }
+    h1 {
+        font-size: 1.5rem;
+    }
+    h2 {
+        font-size: 1.1rem;
+    }
+    .bio-text {
+        font-size: 1rem;
+    }
+    footer {
+        font-size: 0.9rem;
+        padding: 0.5rem;
+    }
+}
+
+@media (max-width: 400px) {
+    #pic {
+        max-width: 120px;
+    }
+    .project-card, .contact-card {
+        max-width: 98vw;
+        padding: 0.5rem;
+        font-size: 0.9rem;
+    }
+    h1 {
+        font-size: 1.1rem;
+    }
+    h2 {
+        font-size: 1rem;
+    }
+}
 
 }
 
@@ -169,6 +233,9 @@ canvas {
 
 
 h2, h1, p {
-  text-align: center;
-  color: white;
+    text-align: center;
+    color: #fff;
+}
+#header, main, section, footer {
+    background: transparent;
 }
