@@ -1,11 +1,19 @@
 
-a {
-    transition: transform 0.2s;
-}
-.certificate-item a {
+
+/* Essential transitions for links */
+a, .certificate-item a, .project-card a, .contact-card a {
     color: #00bfff;
     text-decoration: none;
-    transition: color 0.2s;
+    transition: color 0.2s, transform 0.2s;
+}
+a:hover, a:focus,
+.certificate-item a:hover, .certificate-item a:focus,
+.project-card a:hover, .project-card a:focus,
+.contact-card a:hover, .contact-card a:focus {
+    text-decoration: underline;
+    outline: 2px solid #00bfff;
+    outline-offset: 2px;
+    font-weight: bold;
 }
 
 body {
@@ -24,7 +32,6 @@ body {
     justify-content: center;
 }
 #header nav a {
-    text-decoration: none;
     color: #ffffff;
     font-size: 1rem;
     min-height: 48px;
@@ -32,13 +39,7 @@ body {
     align-items: center;
     padding: 0.75rem 1rem;
     border-radius: 6px;
-}
-#header nav a:hover,
-#header nav a:focus {
-    text-decoration: underline;
-    outline: 2px solid #00bfff;
-    outline-offset: 2px;
-    font-weight: bold;
+    text-decoration: none;
 }
 #siteName {
     font-weight: bold;
@@ -51,22 +52,19 @@ h2, h1, p {
     color: #fff;
 }
 
-#about {
+#about, #Works {
     color: #ffffff;
     padding: 2rem;
     text-align: center;
+    margin-top: 3rem;
+}
+#about {
     margin-top: 9rem;
 }
 #ShortBio {
     font-size: 1.2rem;
     color: #ffffff;
     text-align: left;
-    margin-top: 3rem;
-}
-#Works {
-    color: #ffffff;
-    padding: 2rem;
-    text-align: center;
     margin-top: 3rem;
 }
 
@@ -110,13 +108,6 @@ h2, h1, p {
 .project-card h2 {
     margin-top: 0;
 }
-.project-card a {
-    color: #00bfff;
-    text-decoration: none;
-}
-.project-card a:hover {
-    text-decoration: underline;
-}
 
 #profilepic {
     display: flex;
@@ -138,13 +129,6 @@ h2, h1, p {
 }
 .contact-card li {
     margin-bottom: 1rem;
-}
-.contact-card a {
-    color: #00bfff;
-    text-decoration: none;
-}
-.contact-card a:hover {
-    text-decoration: underline;
 }
 
 canvas {
