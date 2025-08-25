@@ -1,6 +1,70 @@
+/* Hamburger menu styles */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 48px;
+    height: 48px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1001;
+}
+.hamburger span {
+    display: block;
+    width: 30px;
+    height: 4px;
+    margin: 5px 0;
+    background: #fff;
+    border-radius: 2px;
+    transition: 0.3s;
+}
+
+@media (max-width: 700px) {
+    .hamburger {
+        display: flex;
+        position: absolute;
+        top: 16px;
+        right: 16px;
+    }
+    #header nav {
+        flex-direction: column;
+        gap: 0;
+        padding: 0.5rem;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: #181818;
+        width: 100vw;
+        max-width: 100vw;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        transition: transform 0.3s ease;
+        transform: translateY(-120%);
+        opacity: 0;
+        pointer-events: none;
+        z-index: 1000;
+    }
+    #header nav.open {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: auto;
+    }
+    #header nav a {
+        width: 100%;
+        padding: 1rem;
+        border-radius: 0;
+        text-align: left;
+        font-size: 1.2rem;
+        border-bottom: 1px solid #222;
+    }
+    #siteName {
+        margin-bottom: 0.5rem;
+        margin-right: 0;
+    }
+}
 
 
-/* Essential transitions for links */
 a, .certificate-item a, .project-card a, .contact-card a {
     color: #00bfff;
     text-decoration: none;
