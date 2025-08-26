@@ -239,9 +239,21 @@ canvas {
         font-size: 1rem;
         padding: 1rem;
     }
+    #profilepic {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        margin: 0 auto;
+    }
     #pic, .bio-image img {
         max-width: 200px;
+        width: 100%;
         height: auto;
+        margin: 0 auto;
+        display: block;
+        border-radius: 12px;
+        object-fit: cover;
     }
     h1 {
         font-size: 1.5rem;
@@ -259,8 +271,21 @@ canvas {
 }
 
 @media (max-width: 400px) {
+    #profilepic {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        margin: 0 auto;
+    }
     #pic, .bio-image img {
         max-width: 120px;
+        width: 100%;
+        height: auto;
+        margin: 0 auto;
+        display: block;
+        border-radius: 12px;
+        object-fit: cover;
     }
     .project-card, .contact-card {
         max-width: 98vw;
