@@ -150,8 +150,9 @@ h2, h1, p {
     width: 100%;
     max-width: 250px;
     height: auto;
-    object-fit: cover;
-    border-radius: 12px;
+    object-fit: contain;
+    border-radius: 50%;
+    aspect-ratio: 1 / 1;
 }
 
 .project-list {
@@ -252,8 +253,9 @@ canvas {
         height: auto;
         margin: 0 auto;
         display: block;
-        border-radius: 12px;
-        object-fit: cover;
+        border-radius: 50%;
+        object-fit: contain;
+        aspect-ratio: 1 / 1;
     }
     h1 {
         font-size: 1.5rem;
@@ -284,8 +286,9 @@ canvas {
         height: auto;
         margin: 0 auto;
         display: block;
-        border-radius: 12px;
-        object-fit: cover;
+        border-radius: 50%;
+        object-fit: contain;
+        aspect-ratio: 1 / 1;
     }
     .project-card, .contact-card {
         max-width: 98vw;

@@ -9,7 +9,6 @@
     <meta name="keywords" content="Eric Edwards, Portfolio, Developer, Full-Stack, Projects, Software, Web, API, Python, JavaScript, HTML, CSS, Git, GitHub">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="profilepic.png" type="image/png">
-    <!-- p5.js and sketch.js removed: no longer needed -->
     <script src="script.js" defer></script>
     <style>
         html {
@@ -31,6 +30,8 @@
             #pic {
                 width: 200px;
                 height: 200px;
+                object-fit: contain;
+                border-radius: 50%;
             }
             .bio-container {
                 flex-direction: column;
@@ -66,7 +67,6 @@
         <nav id="mainNav">
             <span id="siteName">Eric Edwards</span>
             <a href="#" class="active">Home</a>
-            <a href="#about">About</a>
             <a href="work.html">Works</a>
             <a href="certificates.html">Certificates</a>
             <a href="contact.html">Contact</a>
@@ -99,12 +99,6 @@
         <small>&copy; 2025 Eric Edwards. All rights reserved.</small>
     </footer>
 
-    <script>
-        document.querySelectorAll('#header nav a').forEach(link => {
-            if (window.location.pathname.endsWith(link.getAttribute('href')) || (link.getAttribute('href') === '#' && window.location.pathname.endsWith('index.html'))) {
-                link.classList.add('active');
-            }
-        });
-    </script>
+ 
 </body>
 </html>
