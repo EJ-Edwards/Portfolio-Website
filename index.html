@@ -15,24 +15,35 @@
             scroll-behavior: smooth;
         }
         body {
-            background: #181818;
+            background: linear-gradient(-45deg, #0a0a0a, #1a1a2e, #16213e, #0f3460);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
             color: #fff;
+        }
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
         .active {
             border-bottom: 2px solid #00bfff;
         }
+        #about h1 {
+            background: linear-gradient(45deg, #00bfff, #ff6b6b, #4ecdc4, #45b7d1);
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: textGradient 3s ease-in-out infinite;
+            font-size: 3rem;
+            font-weight: bold;
+            text-shadow: 0 0 30px rgba(0, 191, 255, 0.5);
+        }
+        @keyframes textGradient {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
         @media (max-width: 700px) {
-            nav {
-                flex-direction: column;
-                gap: 1rem;
-                padding: 0.5rem;
-            }
-            #pic {
-                width: 200px;
-                height: 200px;
-                object-fit: contain;
-                border-radius: 50%;
-            }
             .bio-container {
                 flex-direction: column;
                 padding: 1rem;
@@ -40,7 +51,7 @@
             #profilepic {
                 margin-bottom: 1rem;
             }
-            h1 {
+            #about h1 {
                 font-size: 1.5rem;
             }
             h2 {

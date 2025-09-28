@@ -10,6 +10,45 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="profilepic.png" type="image/png">
     <script src="script.js" defer></script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            background: linear-gradient(-45deg, #0a0a0a, #1a1a2e, #16213e, #0f3460);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+            color: #fff;
+        }
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .active {
+            border-bottom: 2px solid #00bfff;
+        }
+        #Works h1 {
+            background: linear-gradient(45deg, #00bfff, #ff6b6b, #4ecdc4, #45b7d1);
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: textGradient 3s ease-in-out infinite;
+            font-size: 3rem;
+            font-weight: bold;
+            text-shadow: 0 0 30px rgba(0, 191, 255, 0.5);
+        }
+        @keyframes textGradient {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        @media (max-width: 700px) {
+            #Works h1 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
 
 </head>
 
@@ -58,12 +97,13 @@
                     <h2>Data Compress Site</h2>
                     <p>Data Compression Website work in progress</p>
                     <a href="https://ej-edwards.github.io/Compress-site-/" target="_blank" rel="noopener noreferrer" aria-label="View Weather App Project">View Project</a>
-            </div>
+                </div>
 
-            <div class="project-card">
-                <h2>Agency Portfolio Website</h2>
-                <p>Agency website built with HTML, CSS and Firebase. Note this project is a work in progress not fully finished.</p>
-                <a href="https://ej-edwards.github.io/Development-Works/" target="_blank" rel="noopener noreferrer" aria-label="View Weather App Project">View Project</a>
+                <div class="project-card">
+                    <h2>Agency Portfolio Website</h2>
+                    <p>Agency website built with HTML, CSS and Firebase. Note this project is a work in progress not fully finished.</p>
+                    <a href="https://ej-edwards.github.io/Development-Works/" target="_blank" rel="noopener noreferrer" aria-label="View Weather App Project">View Project</a>
+                </div>
             </div>
         </section>
     </main>
