@@ -93,7 +93,7 @@ window.addEventListener('DOMContentLoaded', () => {
             position: fixed;
             width: 4px;
             height: 4px;
-            background: radial-gradient(circle, #00bfff, transparent);
+            background: radial-gradient(circle, #00ff41, transparent);
             border-radius: 50%;
             pointer-events: none;
             z-index: 9999;

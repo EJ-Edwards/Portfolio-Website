@@ -16,8 +16,8 @@
 }
 
 .hamburger:hover {
-    background: rgba(0, 191, 255, 0.1);
-    box-shadow: 0 0 15px rgba(0, 191, 255, 0.3);
+    background: rgba(0, 255, 65, 0.1);
+    box-shadow: 0 0 15px rgba(0, 255, 65, 0.3);
 }
 .hamburger span {
     display: block;
@@ -103,7 +103,7 @@
 
 
 a, .certificate-item a, .project-card a, .contact-card a {
-    color: #00bfff;
+    color: #00ff41;
     text-decoration: none;
     transition: color 0.2s, transform 0.2s;
 }
@@ -112,7 +112,7 @@ a:hover, a:focus,
 .project-card a:hover, .project-card a:focus,
 .contact-card a:hover, .contact-card a:focus {
     text-decoration: underline;
-    outline: 2px solid #00bfff;
+    outline: 2px solid #00ff41;
     outline-offset: 2px;
     font-weight: bold;
 }
@@ -120,7 +120,7 @@ a:hover, a:focus,
 body {
     font-size: 1rem;
     overflow-x: hidden;
-    background: linear-gradient(-45deg, #0a0a0a, #1a1a2e, #16213e, #0f3460);
+    background: linear-gradient(-45deg, #000000, #0d0d0d, #1a1a1a, #0a0a0a);
     background-size: 400% 400%;
     animation: gradientShift 15s ease infinite;
     color: #fff;
@@ -155,10 +155,10 @@ body {
 }
 
 #header nav a:hover {
-    color: #00bfff;
-    border-color: #00bfff;
-    box-shadow: 0 0 15px rgba(0, 191, 255, 0.5);
-    text-shadow: 0 0 10px rgba(0, 191, 255, 0.8);
+    color: #00ff41;
+    border-color: #00ff41;
+    box-shadow: 0 0 15px rgba(0, 255, 65, 0.5);
+    text-shadow: 0 0 10px rgba(0, 255, 65, 0.8);
 }
 #siteName {
     font-weight: bold;
@@ -179,7 +179,7 @@ h2, h1, p {
 }
 
 #about h1 {
-    background: linear-gradient(45deg, #00bfff, #ff6b6b, #4ecdc4, #45b7d1);
+    background: linear-gradient(45deg, #00ff41, #ff0080, #00ffff, #ff4500);
     background-size: 300% 300%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -187,7 +187,7 @@ h2, h1, p {
     animation: textGradient 3s ease-in-out infinite;
     font-size: 3rem;
     font-weight: bold;
-    text-shadow: 0 0 30px rgba(0, 191, 255, 0.5);
+    text-shadow: 0 0 30px rgba(0, 255, 65, 0.5);
 }
 
 @keyframes textGradient {
@@ -224,15 +224,15 @@ h2, h1, p {
     object-fit: cover;
     object-position: center;
     border-radius: 50%;
-    border: 3px solid #00bfff;
-    box-shadow: 0 0 20px rgba(0, 191, 255, 0.5);
+    border: 3px solid #00ff41;
+    box-shadow: 0 0 20px rgba(0, 255, 65, 0.5);
     transition: all 0.3s ease;
 }
 
 .bio-image img:hover, #pic:hover {
     transform: scale(1.05);
-    box-shadow: 0 0 30px rgba(0, 191, 255, 0.8);
-    border-color: #ff6b6b;
+    box-shadow: 0 0 30px rgba(0, 255, 65, 0.8);
+    border-color: #ff0080;
 }
 
 .project-list {
@@ -264,7 +264,7 @@ h2, h1, p {
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(0, 191, 255, 0.1), transparent);
+    background: linear-gradient(90deg, transparent, rgba(0, 255, 65, 0.1), transparent);
     transition: left 0.5s;
 }
 
@@ -274,8 +274,8 @@ h2, h1, p {
 
 .project-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 15px 40px rgba(0, 191, 255, 0.2);
-    border-color: rgba(0, 191, 255, 0.4);
+    box-shadow: 0 15px 40px rgba(0, 255, 65, 0.2);
+    border-color: rgba(0, 255, 65, 0.4);
 }
 .project-card h2 {
     margin-top: 0;
@@ -302,7 +302,7 @@ h2, h1, p {
 
 .contact-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 15px 40px rgba(0, 191, 255, 0.2);
+    box-shadow: 0 15px 40px rgba(0, 255, 65, 0.2);
 }
 
 /* Certificate styles */
@@ -334,7 +334,7 @@ h2, h1, p {
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(0, 191, 255, 0.1), transparent);
+    background: linear-gradient(90deg, transparent, rgba(0, 255, 65, 0.1), transparent);
     transition: left 0.5s;
 }
 
@@ -344,15 +344,15 @@ h2, h1, p {
 
 .certificate-item:hover {
     transform: translateY(-10px);
-    box-shadow: 0 15px 40px rgba(0, 191, 255, 0.2);
-    border-color: rgba(0, 191, 255, 0.4);
+    box-shadow: 0 15px 40px rgba(0, 255, 65, 0.2);
+    border-color: rgba(0, 255, 65, 0.4);
 }
 
 .certificate-title {
     font-size: 1.2em;
-    color: #00bfff;
+    color: #00ff41;
     margin-bottom: 8px;
-    text-shadow: 0 0 10px rgba(0, 191, 255, 0.5);
+    text-shadow: 0 0 10px rgba(0, 255, 65, 0.5);
 }
 
 .certificate-date {
