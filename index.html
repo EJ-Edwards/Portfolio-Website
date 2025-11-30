@@ -5,8 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eric Edwards Portfolio</title>
-    <meta name="description" content="Portfolio website for Eric Edwards, a teen full-stack developer and software enthusiast. View projects, bio, and contact info.">
-    <meta name="keywords" content="Eric Edwards, Portfolio, Developer, Full-Stack, Projects, Software, Web, API, Python, JavaScript, HTML, CSS, Git, GitHub">
+    <meta name="description"
+        content="Portfolio website for Eric Edwards, a teen full-stack developer and software enthusiast. View projects, bio, and contact info.">
+    <meta name="keywords"
+        content="Eric Edwards, Portfolio, Developer, Full-Stack, Projects, Software, Web, API, Python, JavaScript, HTML, CSS, Git, GitHub">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="profilepic.png" type="image/png">
     <script src="script.js" defer></script>
@@ -14,20 +16,32 @@
         html {
             scroll-behavior: smooth;
         }
+
         body {
             background: linear-gradient(-45deg, #000000, #0d0d0d, #1a1a1a, #0a0a0a);
             background-size: 400% 400%;
             animation: gradientShift 15s ease infinite;
             color: #fff;
         }
+
         @keyframes gradientShift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
         }
+
         .active {
             border-bottom: 2px solid #00bfff;
         }
+
         #about h1 {
             background: linear-gradient(45deg, #00ff41, #ff0080, #00ffff, #ff4500);
             background-size: 300% 300%;
@@ -39,27 +53,41 @@
             font-weight: bold;
             text-shadow: 0 0 30px rgba(0, 255, 65, 0.5);
         }
+
         @keyframes textGradient {
-            0%, 100% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
+
+            0%,
+            100% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
         }
+
         @media (max-width: 700px) {
             .bio-container {
                 flex-direction: column;
                 padding: 1rem;
             }
+
             #profilepic {
                 margin-bottom: 1rem;
             }
+
             #about h1 {
                 font-size: 1.5rem;
             }
+
             h2 {
                 font-size: 1.1rem;
             }
+
             .bio-text {
                 font-size: 1rem;
             }
+
             footer {
                 font-size: 0.9rem;
                 padding: 0.5rem;
@@ -87,9 +115,9 @@
     <main>
         <section id="about">
             <h1>Hello, I'm Eric</h1>
-            <p>JR Software Engineer</p>
+            <p>Backend Engineer</p>
         </section>
-        <section id="profilepic"> 
+        <section id="profilepic">
             <img id="pic" src="profilepic.png" alt="Eric's Profile Picture">
         </section>
 
@@ -97,12 +125,16 @@
             <div class="bio-container">
                 <div class="bio-text">
                     <h2>About me</h2>
-                    <p>Hi, I'm Eric and I'm a Full-Stack developer and software enthusiast. My work focuses on building web tools, APIs, and researching cool tech.</p>
-                    <p>I work with backend APIs, server projects, frontend development and web scraping—all while still in high school!</p>
-                    <p><strong>Skills:</strong> Java, Python, JavaScript, HTML/CSS, Git, GitHub</p>
-                    <p><strong>Currently Learning:</strong> Golang, TypeScript, and Rust</p>
-                    <p><strong>Resume:</strong> <a href="Resume.pdf" download style="color:#00bfff;">Download PDF</a> 
-            </div>
+                    <p>Hi, I'm Eric — a Backend Engineer and software enthusiast. I specialize in building APIs, server
+                        projects, and web tools.</p>
+                    <p>While I have some experience with JavaScript for frontend development, my main focus is on
+                        designing scalable backend systems and creating APIs—all while still in high school!</p>
+                    <p><strong>Skills:</strong> Python, Golang, JavaScript (frontend basics), HTML/CSS, Git, GitHub</p>
+                    <p><strong>Currently Learning:</strong> C#, TypeScript, Java</p>
+
+
+                    <p><strong>Resume:</strong> <a href="Resume.pdf" download style="color:#00bfff;">Download PDF</a>
+                </div>
         </section>
     </main>
 
@@ -110,7 +142,7 @@
         <small>&copy; 2025 Eric Edwards. All rights reserved.</small>
     </footer>
 
- 
-</body>
-</html>
 
+</body>
+
+</html>
