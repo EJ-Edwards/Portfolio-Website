@@ -5,8 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Works - Eric Edwards</title>
-    <meta name="description" content="Explore Eric Edwards' web development projects, including portfolio, Port Intel, and Card Game.">
-    <meta name="keywords" content="Eric Edwards, Projects, Portfolio, Web Development, Port Intel, Card Game, Full-Stack">
+    <meta name="description"
+        content="Explore Eric Edwards' web development projects, including portfolio, Port Intel, and InvoiceHub.">
+    <meta name="keywords"
+        content="Eric Edwards, Projects, Portfolio, Web Development, Port Intel, InvoiceHub, Full-Stack">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="profilepic.png" type="image/png">
     <script src="script.js" defer></script>
@@ -14,42 +16,121 @@
         html {
             scroll-behavior: smooth;
         }
+
         body {
             background: linear-gradient(-45deg, #000000, #0d0d0d, #1a1a1a, #0a0a0a);
             background-size: 400% 400%;
             animation: gradientShift 15s ease infinite;
             color: #fff;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
         }
+
         @keyframes gradientShift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
         }
+
         .active {
             border-bottom: 2px solid #00bfff;
         }
+
         #Works h1 {
             background: linear-gradient(45deg, #00ff41, #ff0080, #00ffff, #ff4500);
             background-size: 300% 300%;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            background-clip: text;
             animation: textGradient 3s ease-in-out infinite;
             font-size: 3rem;
             font-weight: bold;
             text-shadow: 0 0 30px rgba(0, 255, 65, 0.5);
+            text-align: center;
+            margin-top: 2rem;
         }
+
         @keyframes textGradient {
-            0%, 100% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
+
+            0%,
+            100% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
         }
-        @media (max-width: 700px) {
-            #Works h1 {
-                font-size: 1.5rem;
+
+        #Works p {
+            text-align: center;
+            margin-top: 0.5rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #Works>div {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: space-between;
+            margin-top: 2rem;
+            padding: 0 2rem;
+        }
+
+        .project-card {
+            background-color: rgba(255, 255, 255, 0.05);
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(0, 255, 65, 0.2);
+            flex: 1 1 300px;
+            min-width: 250px;
+            max-width: 32%;
+            transition: transform 0.2s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-card h2 {
+            margin-top: 0;
+        }
+
+        .project-card a {
+            display: inline-block;
+            margin-top: 1rem;
+            color: #00bfff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .project-card a:hover {
+            text-decoration: underline;
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 900px) {
+            .project-card {
+                max-width: 48%;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .project-card {
+                max-width: 100%;
             }
         }
     </style>
-
 </head>
 
 <body>
@@ -71,17 +152,35 @@
     <main>
         <section id="Works">
             <h1>My Projects</h1>
-            <p>Below are some of my projects showcasing my skills and experience. Feel free to explore and learn more about my work.</p>
+            <p>Explore some of my projects showcasing my skills and experience. Click below to learn more.</p>
+
+            <div>
                 <div class="project-card">
                     <h2>Port Intel</h2>
-                    <p>Port Intel is a simple port scanning website that detects open, closed, and filtered ports on a target system. The backend is built with Node.js and Express, while Firebase handles user authentication for secure access. The frontend uses HTML, CSS, and JavaScript to provide a user-friendly experience.</p>
-                    <a href="https://ej-edwards.github.io/Port-Intel/" target="_blank" rel="noopener noreferrer" aria-label="View Port Intel Project">View Project</a>
-                </div>               
-                <div class="project-card">
-                    <h2> Sentinel Link </h2>
-                    <p> Sentinel Link is a secure Python-based remote administration tool that lets authorized users view system info, files, and execute commands via a real-time web dashboard, showcasing full-stack and networking skills.</p>
-                    <a href="https://github.com/EJ-Edwards/Remote-Admin-Tool" target="_blank" rel="noopener noreferrer" aria-label="View Sentinel Link Project">View Project</a>
+                    <p>A port scanning website detecting open, closed, and filtered ports. Backend built with Node.js
+                        and Express, frontend with HTML, CSS, and JavaScript. Firebase handles secure authentication.
+                    </p>
+                    <a href="https://ej-edwards.github.io/Port-Intel/" target="_blank" rel="noopener noreferrer"
+                        aria-label="View Port Intel Project">View Project</a>
                 </div>
+
+                <div class="project-card">
+                    <h2>Sentinel Link</h2>
+                    <p>A secure Python-based remote administration tool. Authorized users can view system info, files,
+                        and execute commands via a real-time web dashboard.</p>
+                    <a href="https://github.com/EJ-Edwards/Remote-Admin-Tool" target="_blank" rel="noopener noreferrer"
+                        aria-label="View Sentinel Link Project">View Project</a>
+                </div>
+
+                <div class="project-card">
+                    <h2>InvoiceHub API</h2>
+                    <p>A lightweight invoicing API for small businesses. Create, manage, and track invoices
+                        programmatically, including client management, payment tracking, and PDF export for professional
+                        receipts.</p>
+                    <a href="https://github.com/EJ-Edwards/InvoiceHub" target="_blank" rel="noopener noreferrer"
+                        aria-label="View InvoiceHub Project">View Project</a>
+                </div>
+
             </div>
         </section>
     </main>
@@ -98,7 +197,5 @@
         });
     </script>
 </body>
+
 </html>
-
-
-
