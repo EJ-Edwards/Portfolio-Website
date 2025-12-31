@@ -10,75 +10,39 @@
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
     <link rel="icon" href="profilepic.png" type="image/png">
-    <style>
-        html {
-            scroll-behavior: smooth;
-        }
-        body {
-            background: linear-gradient(-45deg, #000000, #0d0d0d, #1a1a1a, #0a0a0a);
-            background-size: 400% 400%;
-            animation: gradientShift 15s ease infinite;
-            color: #fff;
-        }
-        @keyframes gradientShift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-        .active {
-            border-bottom: 2px solid #00bfff;
-        }
-        section h1 {
-            background: linear-gradient(45deg, #00ff41, #ff0080, #00ffff, #ff4500);
-            background-size: 300% 300%;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            animation: textGradient 3s ease-in-out infinite;
-            font-size: 3rem;
-            font-weight: bold;
-            text-shadow: 0 0 30px rgba(0, 255, 65, 0.5);
-        }
-        @keyframes textGradient {
-            0%, 100% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-        }
-    </style>
 </head>
 
 <body>
     <header id="header">
-        <button class="hamburger" aria-label="Open navigation" aria-controls="mainNav" aria-expanded="false">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-        <nav id="mainNav">
+        <div class="nav-shell">
             <span id="siteName">Eric Edwards</span>
-            <a href="index.html">Home</a>
-            <a href="work.html">Works</a>
-            <a href="certificates.html" class="active">Certificates</a>
-            <a href="contact.html">Contact</a>
-        </nav>
+            <button class="hamburger" aria-label="Open navigation" aria-controls="mainNav" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav id="mainNav">
+                <a href="index.html">Home</a>
+                <a href="work.html">Works</a>
+                <a href="certificates.html" class="active">Certificates</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
     </header>
 
     <main>
-        <section>
-            <h1>My Certificates</h1>
+        <section class="section certificates-section">
+            <div class="section-heading">
+                <p class="eyebrow">Recognition</p>
+                <h1>My Certificates</h1>
+                <p>Proof that I put as much rigor into learning as I do into building.</p>
+            </div>
             <ul class="certificates-list">
-                <li class="certificate-item">
-                    <div class="certificate-title">Google Cybersecurity Professional Certificate</div>
-                    <div class="certificate-date">Date Awarded: 08-16-2025</div>
-                    <a href="https://www.credly.com/badges/b3c944f3-a931-45a7-b6eb-1d7bfbfb0558/public_url"
-                        target="_blank" style="color:#00bfff;">
-                        View Certificate
-                    </a>
-                </li>
                 <li class="certificate-item">
                     <div class="certificate-title">All Star Code Certificate</div>
                     <div class="certificate-date">Date Awarded: 08-18-2025</div>
-                    <a href="assets/-d237.png"
-                        target="_blank" style="color:#00bfff;">
+                    <a class="inline-link" href="assets/-d237.png"
+                        target="_blank">
                         View Certificate
                     </a>
                 </li>

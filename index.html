@@ -12,127 +12,192 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="profilepic.png" type="image/png">
     <script src="script.js" defer></script>
-    <style>
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            background: linear-gradient(-45deg, #000000, #0d0d0d, #1a1a1a, #0a0a0a);
-            background-size: 400% 400%;
-            animation: gradientShift 15s ease infinite;
-            color: #fff;
-        }
-
-        @keyframes gradientShift {
-            0% {
-                background-position: 0% 50%;
-            }
-
-            50% {
-                background-position: 100% 50%;
-            }
-
-            100% {
-                background-position: 0% 50%;
-            }
-        }
-
-        .active {
-            border-bottom: 2px solid #00bfff;
-        }
-
-        #about h1 {
-            background: linear-gradient(45deg, #00ff41, #ff0080, #00ffff, #ff4500);
-            background-size: 300% 300%;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            animation: textGradient 3s ease-in-out infinite;
-            font-size: 3rem;
-            font-weight: bold;
-            text-shadow: 0 0 30px rgba(0, 255, 65, 0.5);
-        }
-
-        @keyframes textGradient {
-
-            0%,
-            100% {
-                background-position: 0% 50%;
-            }
-
-            50% {
-                background-position: 100% 50%;
-            }
-        }
-
-        @media (max-width: 700px) {
-            .bio-container {
-                flex-direction: column;
-                padding: 1rem;
-            }
-
-            #profilepic {
-                margin-bottom: 1rem;
-            }
-
-            #about h1 {
-                font-size: 1.5rem;
-            }
-
-            h2 {
-                font-size: 1.1rem;
-            }
-
-            .bio-text {
-                font-size: 1rem;
-            }
-
-            footer {
-                font-size: 0.9rem;
-                padding: 0.5rem;
-            }
-        }
-    </style>
 </head>
 
 <body>
     <header id="header">
-        <button class="hamburger" aria-label="Open navigation" aria-controls="mainNav" aria-expanded="false">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-        <nav id="mainNav">
+        <div class="nav-shell">
             <span id="siteName">Eric Edwards</span>
-            <a href="#" class="active">Home</a>
-            <a href="work.html">Works</a>
-            <a href="certificates.html">Certificates</a>
-            <a href="contact.html">Contact</a>
-        </nav>
+            <button class="hamburger" aria-label="Open navigation" aria-controls="mainNav" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav id="mainNav">
+                <a href="index.html" class="active">Home</a>
+                <a href="work.html">Works</a>
+                <a href="certificates.html">Certificates</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
     </header>
 
     <main>
-        <section id="about">
-            <h1>Hello, I'm Eric</h1>
-            <p>Full-Stack Engineer</p>
-        </section>
-        <section id="profilepic">
-            <img id="pic" src="profilepic.png" alt="Eric's Profile Picture">
-        </section>
-
-        <section id="ShortBio">
-            <div class="bio-container">
-                <div class="bio-text">
-                    <h2>About me</h2>
-                    <p>Hi, I'm Eric — a Full-Stack Engineer and software enthusiast. I specialize in building complete web applications, from frontend interfaces to backend APIs and server infrastructure.</p>
-                    <p>I work with both frontend and backend technologies to create scalable, full-stack solutions—all while still in high school!</p>
-                    <p><strong>Skills:</strong> Python, Golang, JavaScript, React, Node.js, HTML/CSS, Git, GitHub</p>
-                    <p><strong>Currently Learning:</strong> C#, TypeScript, Java</p>
-
-
-                    <p><strong>Resume:</strong> <a href="Resume.pdf" download style="color:#00bfff;">Download PDF</a>
+        <section id="hero" class="hero">
+            <div class="hero-content">
+                <p class="eyebrow">Entry-level software engineer</p>
+                <h1>Learning by building small, honest, and security-aware projects.</h1>
+                <p class="lead">I'm Eric Edwards, an entry-level engineer who loves figuring out how frontend, backend,
+                    and security basics fit together. I scope projects realistically, document what I learn, and keep
+                    shipping to stay sharp.</p>
+                <div class="cta-row">
+                    <a class="btn primary" href="work.html">Browse the work</a>
+                    <a class="btn ghost" href="Resume.pdf" download>Download resume</a>
                 </div>
+                <ul class="hero-metrics" aria-label="Key stats">
+                    <li><span>5</span> personal builds</li>
+                    <li><span>2</span> languages in progress</li>
+                    <li><span>∞</span> curiosity to learn</li>
+                </ul>
+            </div>
+            <div class="hero-visual" aria-hidden="true">
+                <div class="visual-card orbit-card">
+                    <p class="eyebrow subtle">Currently tinkering</p>
+                    <h3>Port Intel (student build)</h3>
+                    <p>A lightweight dashboard that scans network endpoints, flags open/closed ports, and displays the results in plain language.</p>
+                </div>
+                <div class="visual-card stack-card">
+                    <p class="eyebrow subtle">Toolbox</p>
+                    <div class="stack-chips">
+                        <span>Python</span>
+                        <span>Golang</span>
+                        <span>React</span>
+                        <span>Node.js</span>
+                        <span>Firebase</span>
+                        <span>HTML/CSS</span>
+                        <span>Git + GitHub</span>
+                        <span>JavaScript</span>
+                    </div>
+                </div>
+                <div class="visual-card signal-card">
+                    <p>Status</p>
+                    <strong>Open to small collaborations + guidance</strong>
+                    <small>Remote-friendly · Great fit for beginner-friendly teams</small>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="section about">
+            <div class="section-heading">
+                <p class="eyebrow">About</p>
+                <h2>Entry-level engineer focused on fundamentals and clear documentation.</h2>
+                <p>I take on bite-sized projects so I can understand the basics of APIs, UI work, and security, then
+                    write up what I learned for the next build.</p>
+            </div>
+            <div class="about-grid">
+                <article class="profile-card">
+                    <img id="pic" src="profilepic.png" alt="Portrait of Eric Edwards">
+                    <dl>
+                        <div>
+                            <dt>Focus</dt>
+                            <dd>Full-stack platforms, APIs, developer tooling</dd>
+                        </div>
+                        <div>
+                            <dt>Currently learning</dt>
+                            <dd>C# and TypeScript</dd>
+                        </div>
+                        <div>
+                            <dt>Based in</dt>
+                            <dd>United States · Remote worldwide</dd>
+                        </div>
+                    </dl>
+                </article>
+                <div class="story" id="ShortBio">
+                    <p>Hi, I'm Eric — an entry-level engineer working toward a software career. I've built focused experiments such as a remote admin tool prototype, a lightweight invoicing API, and a browser-based multiplayer game to understand how production apps come together.</p>
+                    <p>My process is straightforward: research the essentials, sketch a plan, deliver the MVP, then capture next-step improvements. Every project teaches me something new about structure, security, or design.</p>
+                    <div class="stack-chips">
+                        <span>Python</span>
+                        <span>Golang</span>
+                        <span>JavaScript</span>
+                        <span>React</span>
+                        <span>Node.js</span>
+                        <span>HTML/CSS</span>
+                        <span>Git + GitHub</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section focus" id="focus">
+            <div class="section-heading">
+                <p class="eyebrow">Where I bring leverage</p>
+                <h2>What I'm practicing right now.</h2>
+            </div>
+            <div class="focus-grid">
+                <article class="focus-card">
+                    <span class="badge">Security basics</span>
+                    <h3>Recon dashboards & port checks</h3>
+                    <p>Experimenting with scanners and visual summaries to understand how network services respond.</p>
+                </article>
+                <article class="focus-card">
+                    <span class="badge">APIs & infra</span>
+                    <h3>Solid beginner backends</h3>
+                    <p>Building REST APIs with Node and Python, wiring auth later, and writing down what to improve next
+                        time.</p>
+                </article>
+                <article class="focus-card">
+                    <span class="badge">Realtime UX</span>
+                    <h3>Lightweight socket projects</h3>
+                    <p>Trying out chat and multiplayer ideas to practice state management and responsive UI patterns.
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <section class="section projects-preview" aria-labelledby="featured-work">
+            <div class="section-heading">
+                <p class="eyebrow">Selected work</p>
+                <h2 id="featured-work">Artifacts that prove it.</h2>
+                <a class="inline-link" href="work.html">View full project archive</a>
+            </div>
+            <div class="projects-grid">
+                <article class="project-card">
+                    <div class="project-meta">
+                        <span class="badge">Security</span>
+                        <span class="timeline">Active</span>
+                    </div>
+                    <h3>Port Intel</h3>
+                    <p>React + Node platform that maps open, closed, and filtered ports, then turns them into shareable
+                        intelligence briefs.</p>
+                    <a class="inline-link" href="https://portintel.tech/" target="_blank"
+                        rel="noopener noreferrer">Launch project</a>
+                </article>
+                <article class="project-card">
+                    <div class="project-meta">
+                        <span class="badge">Automation</span>
+                        <span class="timeline">Ongoing</span>
+                    </div>
+                    <h3>Sentinel Link</h3>
+                    <p>Python-based remote admin tool exposing secure command execution, telemetry, and file access
+                        through a live dashboard.</p>
+                    <a class="inline-link" href="https://github.com/EJ-Edwards/Remote-Admin-Tool" target="_blank"
+                        rel="noopener noreferrer">View repository</a>
+                </article>
+                <article class="project-card">
+                    <div class="project-meta">
+                        <span class="badge">Fintech</span>
+                        <span class="timeline">Latest</span>
+                    </div>
+                    <h3>InvoiceHub API</h3>
+                    <p>Lightweight invoicing API handling client records, payment tracking, and PDF exports for indie
+                        businesses.</p>
+                    <a class="inline-link" href="https://github.com/EJ-Edwards/InvoiceHub" target="_blank"
+                        rel="noopener noreferrer">View repository</a>
+                </article>
+            </div>
+        </section>
+
+        <section class="cta-panel" id="contact">
+            <div>
+                <p class="eyebrow">Next steps</p>
+                <h2>Need an entry-level engineer with real project reps?</h2>
+                <p>I'm looking for internships, junior roles, mentorship, or open-source issues that welcome
+                    early-career contributors. Share a repo or idea and I'll do my best to help.</p>
+            </div>
+            <div class="cta-actions">
+                <a class="btn primary" href="contact.html">Contact me</a>
+                <a class="inline-link" href="Resume.pdf" download>Grab the resume PDF</a>
+            </div>
         </section>
     </main>
 

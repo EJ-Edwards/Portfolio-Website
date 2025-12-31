@@ -9,97 +9,57 @@
     <meta name="keywords" content="Eric Edwards, Contact, LinkedIn, Gmail, Bluesky, Phone, Portfolio">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="profilepic.png" type="image/png">
-    <!-- p5.js and sketch.js removed: no longer needed -->
     <script src="script.js" defer></script>
-    <style>
-        html {
-            scroll-behavior: smooth;
-        }
-        body {
-            background: linear-gradient(-45deg, #000000, #0d0d0d, #1a1a1a, #0a0a0a);
-            background-size: 400% 400%;
-            animation: gradientShift 15s ease infinite;
-            color: #fff;
-        }
-        @keyframes gradientShift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-        .active {
-            border-bottom: 2px solid #00bfff;
-        }
-        section h1 {
-            background: linear-gradient(45deg, #00ff41, #ff0080, #00ffff, #ff4500);
-            background-size: 300% 300%;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            animation: textGradient 3s ease-in-out infinite;
-            font-size: 3rem;
-            font-weight: bold;
-            text-shadow: 0 0 30px rgba(0, 255, 65, 0.5);
-        }
-        @keyframes textGradient {
-            0%, 100% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-        }
-        @media (max-width: 700px) {
-            .contact-list {
-                flex-direction: column !important;
-                gap: 1rem !important;
-                align-items: stretch !important;
-            }
-            section h1 {
-                font-size: 1.5rem;
-            }
-        }
-    </style>
 </head>
 
 <body>
     <header id="header">
-        <button class="hamburger" aria-label="Open navigation" aria-controls="mainNav" aria-expanded="false">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-        <nav id="mainNav">
+        <div class="nav-shell">
             <span id="siteName">Eric Edwards</span>
-            <a href="index.html">Home</a>
-            <a href="work.html">Works</a>
-            <a href="certificates.html">Certificates</a>
-            <a href="contact.html" class="active">Contact</a>
-        </nav>
+            <button class="hamburger" aria-label="Open navigation" aria-controls="mainNav" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav id="mainNav">
+                <a href="index.html">Home</a>
+                <a href="work.html">Works</a>
+                <a href="certificates.html">Certificates</a>
+                <a href="contact.html" class="active">Contact</a>
+            </nav>
+        </div>
     </header>
 
     <main>
-        <section>
-            <h1>Contact Me</h1>
-            <p>If you have any questions or would like to get in touch, feel free to reach out through any of the following methods:</p>
-            <div class="contact-list" style="display: flex; flex-direction: row; gap: 2rem; flex-wrap: wrap; justify-content: center;">
-                <div class="contact-card">
+        <section class="section contact-section">
+            <div class="section-heading">
+                <p class="eyebrow">Get in touch</p>
+                <h1>Contact Eric</h1>
+                <p>Share a repo, Figma, or simple idea brief. I respond fast with a lightweight plan, timeline, and next steps.</p>
+            </div>
+            <div class="contact-list">
+                <article class="contact-card">
                     <h2>LinkedIn</h2>
-                    <a href="https://www.linkedin.com/in/eric-edwards-6b63b22ba/" target="_blank" rel="noopener" aria-label="Eric Edwards LinkedIn">
+                    <a href="https://www.linkedin.com/in/eric-edwards-6b63b22ba/" target="_blank" rel="noopener" aria-label="Eric Edwards on LinkedIn">
                         Eric Edwards
                     </a>
-                </div>
-                <div class="contact-card">
-                    <h2>Gmail</h2>
+                </article>
+                <article class="contact-card">
+                    <h2>Email</h2>
                     <a href="mailto:ee1912136@gmail.com" aria-label="Email Eric Edwards">
                         ee1912136@gmail.com
                     </a>
-                </div>
-                <div class="contact-card">
+                </article>
+                <article class="contact-card">
                     <h2>Bluesky</h2>
-                    <a href="https://bsky.app/profile/ejwebhacks.bsky.social" target="_blank" rel="noopener" aria-label="Eric Edwards Bluesky">
-                        @EJHacks
+                    <a href="https://bsky.app/profile/ejwebhacks.bsky.social" target="_blank" rel="noopener" aria-label="Eric Edwards on Bluesky">
+                        @ejwebhacks
                     </a>
-                </div>
-                <div class="contact-card">
-                    <h2>Phone Number</h2>
-                    <span aria-label="Phone Number"> +1 (716)-248-8510 </span>
-                </div>
+                </article>
+                <article class="contact-card">
+                    <h2>Phone</h2>
+                    <p class="contact-detail">+1 (716) 248-8510</p>
+                </article>
             </div>
         </section>
     </main>

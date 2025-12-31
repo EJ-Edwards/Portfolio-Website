@@ -12,190 +12,131 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="profilepic.png" type="image/png">
     <script src="script.js" defer></script>
-    <style>
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            background: linear-gradient(-45deg, #000000, #0d0d0d, #1a1a1a, #0a0a0a);
-            background-size: 400% 400%;
-            animation: gradientShift 15s ease infinite;
-            color: #fff;
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-
-        @keyframes gradientShift {
-            0% {
-                background-position: 0% 50%;
-            }
-
-            50% {
-                background-position: 100% 50%;
-            }
-
-            100% {
-                background-position: 0% 50%;
-            }
-        }
-
-        .active {
-            border-bottom: 2px solid #00bfff;
-        }
-
-        #Works h1 {
-            background: linear-gradient(45deg, #00ff41, #ff0080, #00ffff, #ff4500);
-            background-size: 300% 300%;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: textGradient 3s ease-in-out infinite;
-            font-size: 3rem;
-            font-weight: bold;
-            text-shadow: 0 0 30px rgba(0, 255, 65, 0.5);
-            text-align: center;
-            margin-top: 2rem;
-        }
-
-        @keyframes textGradient {
-
-            0%,
-            100% {
-                background-position: 0% 50%;
-            }
-
-            50% {
-                background-position: 100% 50%;
-            }
-        }
-
-        #Works p {
-            text-align: center;
-            margin-top: 0.5rem;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        #Works>div {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 2rem;
-            justify-content: space-between;
-            margin-top: 2rem;
-            padding: 0 2rem;
-        }
-
-        .project-card {
-            background-color: rgba(255, 255, 255, 0.05);
-            padding: 1.5rem;
-            border-radius: 12px;
-            box-shadow: 0 0 15px rgba(0, 255, 65, 0.2);
-            flex: 1 1 300px;
-            min-width: 250px;
-            max-width: 32%;
-            transition: transform 0.2s;
-        }
-
-        .project-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .project-card h2 {
-            margin-top: 0;
-        }
-
-        .project-card a {
-            display: inline-block;
-            margin-top: 1rem;
-            color: #00bfff;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        .project-card a:hover {
-            text-decoration: underline;
-        }
-
-        /* Mobile responsiveness */
-        @media (max-width: 900px) {
-            .project-card {
-                max-width: 48%;
-            }
-        }
-
-        @media (max-width: 600px) {
-            .project-card {
-                max-width: 100%;
-            }
-        }
-    </style>
 </head>
 
 <body>
     <header id="header">
-        <button class="hamburger" aria-label="Open navigation" aria-controls="mainNav" aria-expanded="false">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-        <nav id="mainNav">
+        <div class="nav-shell">
             <span id="siteName">Eric Edwards</span>
-            <a href="index.html">Home</a>
-            <a href="work.html" class="active">Works</a>
-            <a href="certificates.html">Certificates</a>
-            <a href="contact.html">Contact</a>
-        </nav>
+            <button class="hamburger" aria-label="Open navigation" aria-controls="mainNav" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav id="mainNav">
+                <a href="index.html">Home</a>
+                <a href="work.html" class="active">Works</a>
+                <a href="certificates.html">Certificates</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
     </header>
 
     <main>
-        <section id="Works">
-            <h1>My Projects</h1>
-            <p>Explore some of my full-stack engineering projects showcasing my skills and experience. Click below to learn more.</p>
-
-            <div>
-                <div class="project-card">
-                    <h2>Port Intel</h2>
-                    <p>A port scanning website detecting open, closed, and filtered ports. Backend built with Node.js
-                        and Express, frontend with Reactjs and CSS. Firebase handles secure authentication.
-                    </p>
-                    <a href="https://portintel.tech//" target="_blank" rel="noopener noreferrer"
-                        aria-label="View Port Intel Project">View Project</a>
-                </div>
-
-                <div class="project-card">
-                    <h2>Sentinel Link</h2>
-                    <p>A secure Python-based remote administration tool. Authorized users can view system info, files,
-                        and execute commands via a real-time web dashboard.</p>
-                    <a href="https://github.com/EJ-Edwards/Remote-Admin-Tool" target="_blank" rel="noopener noreferrer"
-                        aria-label="View Sentinel Link Project">View Project</a>
-                </div>
-
-                <div class="project-card">
-                    <h2>InvoiceHub API</h2>
-                    <p>A lightweight invoicing API for small businesses. Create, manage, and track invoices
-                        programmatically, including client management, payment tracking, and PDF export for professional
-                        receipts.</p>
-                    <a href="https://github.com/EJ-Edwards/InvoiceHub" target="_blank" rel="noopener noreferrer"
-                        aria-label="View InvoiceHub Project">View Project</a>
-                </div>
-
-                <div class="project-card">
-                    <h2>GoChat</h2>
-                    <p>A real-time chat application built with Golang, HTML, CSS, and JavaScript.</p>
-                    <a href="https://github.com/EJ-Edwards/GoChat" target="_blank" rel="noopener noreferrer"
-                        aria-label="View GoChat Project">View Project</a>
-                </div>
-
-                <div class="project-card">
-                    <h2>Royal Score</h2>
-                    <p>Royal Score - Multiplayer card game with real-time gameplay using Node.js, Socket.io, and vanilla JavaScript. Features room-based matchmaking, turn-based mechanics, and responsive design for mobile/desktop.</p>
-                    <a href="https://github.com/EJ-Edwards/Royal-Score" target="_blank" rel="noopener noreferrer"
-                        aria-label="View Royal Score Project">View Project</a>
-                </div>
-
+        <section id="Works" class="works-hero section">
+            <p class="eyebrow">Selected work</p>
+            <h1>Hands-on builds for security, automation, and realtime products.</h1>
+            <p>Every project gets a purposeful design system, guardrails for scale, and instrumentation so teams can iterate. Here's a curated slice of what I've shipped recently.</p>
+            <div class="cta-row">
+                <a class="btn primary" href="contact.html">Start a project</a>
+                <a class="btn ghost" href="index.html#hero">Back to overview</a>
             </div>
+        </section>
+
+        <section class="section project-gallery">
+            <div class="projects-grid">
+                <article class="project-card">
+                    <div class="project-meta">
+                        <span class="badge">Security</span>
+                        <span class="timeline">2025</span>
+                    </div>
+                    <h2>Port Intel</h2>
+                    <p>Cloud-first reconnaissance platform that detects open, closed, and filtered ports, then wraps the scan data in tactical dashboards for security teams.</p>
+                    <ul class="tech-list">
+                        <li>React</li>
+                        <li>Node.js</li>
+                        <li>Express</li>
+                        <li>Firebase Auth</li>
+                        <li>PostgreSQL</li>
+                    </ul>
+                    <a class="inline-link" href="https://portintel.tech/" target="_blank" rel="noopener noreferrer" aria-label="View Port Intel project">Launch project</a>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-meta">
+                        <span class="badge">Remote ops</span>
+                        <span class="timeline">2025</span>
+                    </div>
+                    <h2>Sentinel Link</h2>
+                    <p>A secure Python remote administration tool that streams telemetry, runs commands, and manages files through a live dashboard with RBAC.</p>
+                    <ul class="tech-list">
+                        <li>Python</li>
+                        <li>Flask</li>
+                        <li>WebSockets</li>
+                        <li>SQLite</li>
+                    </ul>
+                    <a class="inline-link" href="https://github.com/EJ-Edwards/Remote-Admin-Tool" target="_blank" rel="noopener noreferrer" aria-label="View Sentinel Link project">View repository</a>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-meta">
+                        <span class="badge">Fintech</span>
+                        <span class="timeline">2025</span>
+                    </div>
+                    <h2>InvoiceHub API</h2>
+                    <p>Lightweight invoicing API for indie businesses with endpoints for clients, payments, PDF receipts, and status notifications.</p>
+                    <ul class="tech-list">
+                        <li>Node.js</li>
+                        <li>MongoDB</li>
+                        <li>JWT</li>
+                    </ul>
+                    <a class="inline-link" href="https://github.com/EJ-Edwards/InvoiceHub" target="_blank" rel="noopener noreferrer" aria-label="View InvoiceHub project">View repository</a>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-meta">
+                        <span class="badge">Realtime</span>
+                        <span class="timeline">2025</span>
+                    </div>
+                    <h2>GoChat</h2>
+                    <p>Realtime Golang chat stack with presence indicators, channel permissions, and responsive UI tuned for both desktop and mobile.</p>
+                    <ul class="tech-list">
+                        <li>Golang</li>
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>JavaScript</li>
+                    </ul>
+                    <a class="inline-link" href="https://github.com/EJ-Edwards/GoChat" target="_blank" rel="noopener noreferrer" aria-label="View GoChat project">View repository</a>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-meta">
+                        <span class="badge">Gaming</span>
+                        <span class="timeline">2025</span>
+                    </div>
+                    <h2>Royal Score</h2>
+                    <p>Multiplayer card game with socket-powered turns, room-based matchmaking, and adaptive UI for any device.</p>
+                    <ul class="tech-list">
+                        <li>Node.js</li>
+                        <li>Socket.io</li>
+                        <li>Vanilla JS</li>
+                    </ul>
+                    <a class="inline-link" href="https://github.com/EJ-Edwards/Royal-Score" target="_blank" rel="noopener noreferrer" aria-label="View Royal Score project">View repository</a>
+                </article>
+            </div>
+        </section>
+
+        <section class="signal-panel">
+            <article class="signal-card">
+                <p class="eyebrow subtle">Delivery approach</p>
+                <h3>Research → architecture → build → instrumentation</h3>
+                <p>Each engagement starts with reverse engineering or requirements mapping, follows with technical architecture in Notion, then lands with clean repos, docs, and observability hooks.</p>
+            </article>
+            <article class="signal-card">
+                <p class="eyebrow subtle">Collaboration</p>
+                <h3>Async-first, demo-ready</h3>
+                <p>Lightweight Loom updates, annotated PRs, and demo builds keep stakeholders aligned no matter the time zone.</p>
+            </article>
         </section>
     </main>
 
