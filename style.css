@@ -528,6 +528,13 @@ main {
     font-weight: 600;
 }
 
+.certificate-note {
+    margin-top: 0.75rem;
+    font-size: 0.9rem;
+    color: var(--muted);
+    font-style: italic;
+}
+
 footer {
     text-align: center;
     padding: 2rem 0;
