@@ -300,19 +300,36 @@ main {
     box-shadow: var(--shadow);
 }
 
-.stack-card .stack-chips,
-.story .stack-chips {
+.stack-card .stack-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
     display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
+    flex-direction: column;
+    gap: 0.65rem;
 }
 
-.stack-chips span {
-    padding: 0.4rem 0.85rem;
-    border-radius: 999px;
-    background: rgba(255, 255, 255, 0.05);
+.stack-card .stack-list li {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.75rem;
+    padding: 0.6rem 0.9rem;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.04);
     border: 1px solid rgba(255, 255, 255, 0.08);
-    font-size: 0.85rem;
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+.stack-card .stack-list strong {
+    color: var(--text);
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.stack-card .stack-list span {
+    text-align: right;
 }
 
 .signal-card strong {
