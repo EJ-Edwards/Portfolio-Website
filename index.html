@@ -53,8 +53,8 @@
             <div class="hero-visual" aria-hidden="true">
                 <div class="visual-card orbit-card">
                     <p class="eyebrow subtle">Currently tinkering</p>
-                    <h3>Port Intel (student build)</h3>
-                    <p>A lightweight dashboard that scans network endpoints, flags open/closed ports, and displays the results in plain language.</p>
+                    <h3>EmuDock (student build)</h3>
+                    <p>A sandboxed emulator dock that snapshots configs, syncs save states, and keeps retro test rigs organized.</p>
                 </div>
                 <div class="visual-card stack-card">
                     <p class="eyebrow subtle">Toolbox</p>
@@ -63,7 +63,7 @@
                                 <li><strong>Frameworks</strong><span>React · Node.js · Express</span></li>
                                 <li><strong>Frontend</strong><span>HTML/CSS</span></li>
                                 <li><strong>Databases</strong><span>PostgreSQL · Firebase</span></li>
-                                <li><strong>Tools</strong><span>Git · GitHub ·</span></li>
+                                <li><strong>Tools</strong><span>Git · GitHub · VS Code</span></li>
                     </ul>
                 </div>
                 <div class="visual-card signal-card">
@@ -131,47 +131,74 @@
             </div>
         </section>
 
-        <section class="section projects-preview" aria-labelledby="featured-work">
+        <section class="section github-section" id="github">
             <div class="section-heading">
-                <p class="eyebrow">Selected work</p>
-                <h2 id="featured-work">Artifacts that prove it.</h2>
-                <a class="inline-link" href="work.html">View full project archive</a>
+                <p class="eyebrow">GitHub</p>
+                <h2>Peek at the repos powering these projects.</h2>
+                <p>I document progress in public so you can see how I learn, refactor, and iterate from one build to
+                    the next.</p>
             </div>
-            <div class="projects-grid">
-                <article class="project-card">
-                    <div class="project-meta">
-                        <span class="badge">Security</span>
-                        <span class="timeline">Ongoing</span>
+            <div class="github-panel">
+                <article class="github-card github-profile" aria-label="GitHub profile spotlight">
+                    <div class="github-handle">
+                        <img src="https://github.com/EJ-Edwards.png" alt="Eric Edwards GitHub avatar" class="github-avatar">
+                        <div>
+                            <p class="eyebrow subtle">github.com</p>
+                            <h3>@EJ-Edwards</h3>
+                            <p>Daily commits, writeups, and experiments in securing and scaling beginner-friendly
+                                stacks.</p>
+                        </div>
                     </div>
-                    <h3>Port Intel</h3>
-                    <p>React + Node platform that maps open, closed, and filtered ports, then turns them into shareable
-                        intelligence briefs.</p>
-                    <a class="inline-link" href="https://portintel.tech/" target="_blank"
-                        rel="noopener noreferrer">Launch project</a>
+                    <a class="btn primary" href="https://github.com/EJ-Edwards" target="_blank"
+                        rel="noopener noreferrer">Visit the profile</a>
                 </article>
-                <article class="project-card">
-                    <div class="project-meta">
-                        <span class="badge">Automation</span>
-                        <span class="timeline">Latest</span>
-                    </div>
-                    <h3>Sentinel Link</h3>
-                    <p>Python-based remote admin tool exposing secure command execution, telemetry, and file access
-                        through a live dashboard.</p>
-                    <a class="inline-link" href="https://github.com/EJ-Edwards/Remote-Admin-Tool" target="_blank"
-                        rel="noopener noreferrer">View repository</a>
+
+                <article class="github-card github-stats" aria-label="GitHub stats">
+                    <ul class="github-stats-list">
+                        <li>
+                            <span class="stat-value" data-metric="public-repos">20+</span>
+                            <small>public repos</small>
+                        </li>
+                        <li>
+                            <span class="stat-value" data-metric="commits">300+</span>
+                            <small>commits logged</small>
+                        </li>
+                        <li>
+                            <span class="stat-value" data-metric="collabs">5</span>
+                            <small>open-source collabs</small>
+                        </li>
+                    </ul>
+                    <p class="eyebrow subtle">Always open to issues, feedback, and pair sessions.</p>
                 </article>
-                <article class="project-card">
-                    <div class="project-meta">
-                        <span class="badge">Fintech</span>
-                        <span class="timeline">Latest</span>
-                    </div>
-                    <h3>InvoiceHub API</h3>
-                    <p>Lightweight invoicing API handling client records, payment tracking, and PDF exports for indie
-                        businesses.</p>
-                    <a class="inline-link" href="https://github.com/EJ-Edwards/InvoiceHub" target="_blank"
-                        rel="noopener noreferrer">View repository</a>
+
+                <article class="github-card github-repos" aria-label="Highlighted repositories">
+                    <h3>Best projects</h3>
+                    <ul class="repo-links" aria-label="Repository links">
+                        <li>
+                            <div>
+                                <strong>EmuDock</strong>
+                                <span>Game Emulator for playing retro games</span>
+                            </div>
+                            <a class="inline-link" href="https://github.com/EJ-Edwards/EmuDock" target="_blank" rel="noopener noreferrer">View repo</a>
+                        </li>
+                        <li>
+                            <div>
+                                <strong>Remote Admin Tool</strong>
+                                <span>Python automation + telemetry</span>
+                            </div>
+                            <a class="inline-link" href="https://github.com/EJ-Edwards/Remote-Admin-Tool" target="_blank" rel="noopener noreferrer">View repo</a>
+                        </li>
+                        <li>
+                            <div>
+                                <strong>InvoiceHub API</strong>
+                                <span>Billing endpoints for indie teams</span>
+                            </div>
+                            <a class="inline-link" href="https://github.com/EJ-Edwards/InvoiceHub" target="_blank" rel="noopener noreferrer">View repo</a>
+                        </li>
+                    </ul>
                 </article>
             </div>
+
         </section>
 
         <section class="cta-panel" id="contact">
