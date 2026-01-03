@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybersecurity Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header id="header">
+        <div class="nav-shell">
+            <span id="siteName">Eric Edwards</span>
+            <button class="hamburger" aria-label="Open navigation" aria-controls="mainNav" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav id="mainNav">
+                <a href="index.html">Home</a>
+                <a href="work.html" class="active">Works</a>
+                <a href="certificates.html">Certificates</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <div class="container">
+                <h1>Cybersecurity Portfolio</h1>
+                <p class="subtitle">Penetration Testing | SOC Operations | Security Research</p>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <div class="container">
+                <!-- Writeups Section -->
+                <div class="category-section">
+                    <h2>Security Writeups</h2>
+                    <p class="section-description">Detailed walkthroughs and analyses of security challenges and vulnerabilities</p>
+                    
+                    <div class="projects-grid">
+                        <div class="project-card">
+                            <h3>HackTheBox Writeup: Machine Name</h3>
+                            <p class="project-description">Detailed writeup of exploiting vulnerabilities including privilege escalation and lateral movement techniques.</p>
+                            <div class="tech-tags">
+                                <span class="tag">Linux</span>
+                                <span class="tag">Web Exploitation</span>
+                                <span class="tag">Privilege Escalation</span>
+                            </div>
+                            <a href="#" class="btn-secondary">Read Writeup</a>
+                        </div>
+
+                        <div class="project-card">
+                            <h3>TryHackMe Room: Security Challenge</h3>
+                            <p class="project-description">Complete walkthrough demonstrating enumeration, exploitation, and post-exploitation phases.</p>
+                            <div class="tech-tags">
+                                <span class="tag">Windows</span>
+                                <span class="tag">Active Directory</span>
+                                <span class="tag">Kerberos</span>
+                            </div>
+                            <a href="#" class="btn-secondary">Read Writeup</a>
+                        </div>
+
+                        <div class="project-card">
+                            <h3>CTF Challenge Writeup</h3>
+                            <p class="project-description">Analysis of complex CTF challenges covering cryptography, reverse engineering, and forensics.</p>
+                            <div class="tech-tags">
+                                <span class="tag">Cryptography</span>
+                                <span class="tag">Reverse Engineering</span>
+                                <span class="tag">Forensics</span>
+                            </div>
+                            <a href="#" class="btn-secondary">Read Writeup</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Penetration Testing Section -->
+                <div class="category-section">
+                    <h2>Penetration Testing Projects</h2>
+                    <p class="section-description">Red team operations, vulnerability assessments, and security testing</p>
+                    
+                    <div class="projects-grid">
+                        <div class="project-card">
+                            <h3>Web Application Penetration Test</h3>
+                            <p class="project-description">Comprehensive security assessment identifying OWASP Top 10 vulnerabilities including SQL injection, XSS, and authentication bypasses.</p>
+                            <div class="tech-tags">
+                                <span class="tag">Web Application</span>
+                                <span class="tag">OWASP</span>
+                                <span class="tag">Burp Suite</span>
+                            </div>
+                            <a href="#" class="btn-secondary">View Report</a>
+                        </div>
+
+                        <div class="project-card">
+                            <h3>Network Infrastructure Assessment</h3>
+                            <p class="project-description">Full network penetration test covering reconnaissance, vulnerability scanning, and exploitation of network services.</p>
+                            <div class="tech-tags">
+                                <span class="tag">Network</span>
+                                <span class="tag">Nmap</span>
+                                <span class="tag">Metasploit</span>
+                            </div>
+                            <a href="#" class="btn-secondary">View Report</a>
+                        </div>
+
+                        <div class="project-card">
+                            <h3>Active Directory Red Team Assessment</h3>
+                            <p class="project-description">Simulated adversary engagement targeting AD environment, demonstrating lateral movement and domain compromise.</p>
+                            <div class="tech-tags">
+                                <span class="tag">Active Directory</span>
+                                <span class="tag">BloodHound</span>
+                                <span class="tag">Mimikatz</span>
+                            </div>
+                            <a href="#" class="btn-secondary">View Report</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SOC Operations Section -->
+                <div class="category-section">
+                    <h2>SOC Operations & Blue Team</h2>
+                    <p class="section-description">Threat detection, incident response, and security monitoring</p>
+                    
+                    <div class="projects-grid">
+                        <div class="project-card">
+                            <h3>SIEM Implementation & Tuning</h3>
+                            <p class="project-description">Deployed and configured security information and event management system with custom detection rules and correlation logic.</p>
+                            <div class="tech-tags">
+                                <span class="tag">SIEM</span>
+                                <span class="tag">Splunk</span>
+                                <span class="tag">Detection Engineering</span>
+                            </div>
+                            <a href="#" class="btn-secondary">Learn More</a>
+                        </div>
+
+                        <div class="project-card">
+                            <h3>Incident Response Case Study</h3>
+                            <p class="project-description">Real-world incident response scenario covering detection, containment, eradication, and recovery phases.</p>
+                            <div class="tech-tags">
+                                <span class="tag">Incident Response</span>
+                                <span class="tag">Forensics</span>
+                                <span class="tag">Malware Analysis</span>
+                            </div>
+                            <a href="#" class="btn-secondary">Learn More</a>
+                        </div>
+
+                        <div class="project-card">
+                            <h3>Threat Hunting Project</h3>
+                            <p class="project-description">Proactive threat hunting campaign identifying advanced persistent threats through log analysis and behavioral analytics.</p>
+                            <div class="tech-tags">
+                                <span class="tag">Threat Hunting</span>
+                                <span class="tag">EDR</span>
+                                <span class="tag">MITRE ATT&CK</span>
+                            </div>
+                            <a href="#" class="btn-secondary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Additional Security Projects Section -->
+                <div class="category-section">
+                    <h2>Additional Security Projects</h2>
+                    <p class="section-description">Security research, tools development, and other cybersecurity work</p>
+                    
+                    <div class="projects-grid">
+                        <div class="project-card">
+                            <h3>Custom Security Tool Development</h3>
+                            <p class="project-description">Python-based security automation tools for vulnerability scanning and exploitation.</p>
+                            <div class="tech-tags">
+                                <span class="tag">Python</span>
+                                <span class="tag">Security Tools</span>
+                                <span class="tag">Automation</span>
+                            </div>
+                            <a href="#" class="btn-secondary">View Code</a>
+                        </div>
+
+                        <div class="project-card">
+                            <h3>Security Awareness Training</h3>
+                            <p class="project-description">Developed and delivered security awareness training materials for organizations.</p>
+                            <div class="tech-tags">
+                                <span class="tag">Training</span>
+                                <span class="tag">Social Engineering</span>
+                                <span class="tag">Security Awareness</span>
+                            </div>
+                            <a href="#" class="btn-secondary">Learn More</a>
+                        </div>
+
+                        <div class="project-card">
+                            <h3>Vulnerability Research</h3>
+                            <p class="project-description">Security research and responsible disclosure of vulnerabilities in software applications.</p>
+                            <div class="tech-tags">
+                                <span class="tag">Vulnerability Research</span>
+                                <span class="tag">Bug Bounty</span>
+                                <span class="tag">Responsible Disclosure</span>
+                            </div>
+                            <a href="#" class="btn-secondary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Portfolio. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
