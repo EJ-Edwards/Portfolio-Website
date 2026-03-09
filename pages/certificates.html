@@ -7,9 +7,9 @@
     <title>Certificates - Eric Edwards</title>
     <meta name="description" content="View certificates earned by Eric Edwards, full-stack developer.">
     <meta name="keywords" content="Eric Edwards, Certificates, Portfolio, Developer, Awards">
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
-    <link rel="icon" href="profilepic.png" type="image/png">
+    <link rel="stylesheet" href="../style.css">
+    <script src="../script.js" defer></script>
+    <link rel="icon" href="../profilepic.png" type="image/png">
 </head>
 
 <body>
@@ -22,8 +22,9 @@
                 <span></span>
             </button>
             <nav id="mainNav">
-                <a href="index.html">Home</a>
+                <a href="../index.html">Home</a>
                 <a href="work.html">Works</a>
+                <a href="opensource.html">Open Source</a>
                 <a href="certificates.html" class="active">Certificates</a>
                 <a href="contact.html">Contact</a>
             </nav>
@@ -64,9 +65,12 @@
 
     <script>
         document.querySelectorAll('#header nav a').forEach(link => {
-            if (window.location.pathname.endsWith(link.getAttribute('href')) || link.getAttribute('href') === 'certificates.html') {
-                link.classList.add('active');
-            }
+            try {
+                const linkPath = new URL(link.href, window.location.origin).pathname;
+                if (linkPath === window.location.pathname) {
+                    link.classList.add('active');
+                }
+            } catch {}
         });
     </script>
 </body>

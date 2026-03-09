@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Development Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
 </head>
 <body>
     <header id="header">
@@ -16,8 +16,9 @@
                 <span></span>
             </button>
             <nav id="mainNav">
-                <a href="index.html">Home</a>
+                <a href="../index.html">Home</a>
                 <a href="work.html" class="active">Works</a>
+                <a href="opensource.html">Open Source</a>
                 <a href="certificates.html">Certificates</a>
                 <a href="contact.html">Contact</a>
             </nav>
@@ -112,5 +113,15 @@
     </footer>
 
     <script src="script.js"></script>
+    <script>
+        document.querySelectorAll('#header nav a').forEach(link => {
+            try {
+                const linkPath = new URL(link.href, window.location.origin).pathname;
+                if (linkPath === window.location.pathname) {
+                    link.classList.add('active');
+                }
+            } catch {}
+        });
+    </script>
 </body>
 </html>

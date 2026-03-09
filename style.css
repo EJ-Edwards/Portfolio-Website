@@ -198,8 +198,56 @@ main {
 .btn.primary {
     background: linear-gradient(120deg, var(--accent), #54c1ff);
     color: #050505;
-    border: none;
 }
+
+/* contributions list styling */
+.opensource-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.opensource-item {
+    padding: 1.5rem 2rem;
+    margin-bottom: 1.5rem;
+    background: var(--surface);
+    border-radius: 8px;
+    transition: background 0.2s ease;
+    position: relative;
+    padding-left: 2rem; /* space for bullet */
+}
+
+.opensource-item::before {
+    content: '•';
+    position: absolute;
+    left: 0.75rem;
+    top: 1.5rem;
+    font-size: 1.5rem;
+    color: var(--accent);
+}
+
+.opensource-item:hover {
+    background: var(--surface-strong);
+}
+
+.opensource-item h2 {
+    margin-bottom: 0.5rem;
+    color: var(--accent);
+    font-size: 1.25rem;
+}
+
+.opensource-item p {
+    color: var(--text);
+    line-height: 1.5;
+}
+
+.opensource-item .inline-link {
+    font-weight: 600;
+    color: var(--accent-2);
+    display: inline-block;
+    margin-top: 1rem;
+}
+
 
 .btn.ghost {
     background: transparent;
@@ -248,8 +296,23 @@ main {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 2.5rem;
-    padding-top: 5rem;
+    padding: 6rem 0 4rem; /* more breathing room top and bottom */
     align-items: center;
+}
+
+.hero-visual img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    object-fit: cover;
+    justify-self: center; /* keep it centered in grid cell */
+}
+
+@media (min-width: 800px) {
+    .hero-visual img {
+        max-width: 60%;
+    }
 }
 
 .hero-content h1 {
@@ -739,6 +802,35 @@ nav {
 /* Content Section */
 .content-section {
     padding: 2rem 0 4rem;
+}
+
+/* individual contribution page content */
+.content {
+    max-width: 720px;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
+.content h2 {
+    margin-top: 2.5rem;
+    font-size: 1.75rem;
+    color: var(--text);
+}
+
+.content p {
+    margin-top: 1rem;
+    color: var(--muted);
+}
+
+.content ul {
+    margin: 1rem 0;
+    padding-left: 1.5rem;
+    color: var(--text);
+    list-style: disc;
+}
+
+.content li {
+    margin-bottom: 0.6rem;
 }
 
 .category-section {

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Eric Edwards</title>
+    <meta name="description" content="Contact Eric Edwards, full-stack developer. Find LinkedIn, Gmail, Bluesky, and phone number.">
+    <meta name="keywords" content="Eric Edwards, Contact, LinkedIn, Gmail, Bluesky, Phone, Portfolio">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="icon" href="../profilepic.png" type="image/png">
+    <script src="../script.js" defer></script>
+</head>
+
+<body>
+    <header id="header">
+        <div class="nav-shell">
+            <span id="siteName">Eric Edwards</span>
+            <button class="hamburger" aria-label="Open navigation" aria-controls="mainNav" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav id="mainNav">
+                <a href="../index.html">Home</a>
+                <a href="work.html">Works</a>
+                <a href="opensource.html">Open Source</a>
+                <a href="certificates.html">Certificates</a>
+                <a href="contact.html" class="active">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="section contact-section">
+            <div class="section-heading">
+                <p class="eyebrow">Get in touch</p>
+                <h1>Contact Eric</h1>
+                <p>Share a repo, Figma, or simple idea brief. I respond fast with a lightweight plan, timeline, and next steps.</p>
+            </div>
+            <div class="contact-list">
+                <article class="contact-card">
+                    <h2>LinkedIn</h2>
+                    <a href="https://www.linkedin.com/in/eric-edwards-6b63b22ba/" target="_blank" rel="noopener" aria-label="Eric Edwards on LinkedIn">
+                        Eric Edwards
+                    </a>
+                </article>
+                <article class="contact-card">
+                    <h2>Email</h2>
+                    <a href="mailto:ee1912136@gmail.com" aria-label="Email Eric Edwards">
+                        ee1912136@gmail.com
+                    </a>
+                </article>
+                <article class="contact-card">
+                    <h2>Bluesky</h2>
+                    <a href="https://bsky.app/profile/ejwebhacks.bsky.social" target="_blank" rel="noopener" aria-label="Eric Edwards on Bluesky">
+                        @ejwebhacks
+                    </a>
+                </article>
+                <article class="contact-card">
+                    <h2>Phone</h2>
+                    <p class="contact-detail">+1 (716) 248-8510</p>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer style="text-align:center; color:#aaa; margin-top:2rem;">
+        <small>&copy; 2025 Eric Edwards. All rights reserved.</small>
+    </footer>
+
+    <script>
+        document.querySelectorAll('#header nav a').forEach(link => {
+            try {
+                const linkPath = new URL(link.href, window.location.origin).pathname;
+                if (linkPath === window.location.pathname) {
+                    link.classList.add('active');
+                }
+            } catch {}
+        });
+    </script>
+</body>
+</html>

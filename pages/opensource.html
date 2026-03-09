@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Open Source Contributions - Eric Edwards</title>
+    <meta name="description" content="Browse the open source projects and pull requests contributed by Eric Edwards.">
+    <meta name="keywords" content="Eric Edwards, Open Source, Contributions, GitHub, Portfolio">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="icon" href="../profilepic.png" type="image/png">
+    <script src="../script.js" defer></script>
+</head>
+
+<body>
+    <header id="header">
+        <div class="nav-shell">
+            <span id="siteName">Eric Edwards</span>
+            <button class="hamburger" aria-label="Open navigation" aria-controls="mainNav" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav id="mainNav">
+                <a href="../index.html">Home</a>
+                <a href="work.html">Works</a>
+                <a href="opensource.html" class="active">Open Source</a>
+                <a href="certificates.html">Certificates</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="section opensource-section">
+            <div class="section-heading">
+                <p class="eyebrow">Community</p>
+                <h1>Open‑Source Contributions</h1>
+                <p>I've joined a handful of projects and submitted pull requests to fix bugs, add features, and improve docs. Below are some highlights – click through to see the actual commits or reviews.</p>
+            </div>
+
+            <ul class="opensource-list">
+                <li class="opensource-item">
+                    <h2><a href="contributions/tj-java.html">TJ Java</a></h2>
+                    <p>I'm contributing to the TJ Java community Discord server by improving the bot code. Read the full write‑up below.</p>
+                    <a class="inline-link" href="contributions/tj-java.html">View the detailed contribution ↗</a>
+                </li>
+
+            </ul>
+
+            <div class="cta-row">
+                <a class="btn ghost" href="work.html">Back to works</a>
+            </div>
+        </section>
+    </main>
+
+    <footer style="text-align:center; color:#aaa; margin-top:2rem;">
+        <small>&copy; 2025 Eric Edwards. All rights reserved.</small>
+    </footer>
+
+    <script>
+        document.querySelectorAll('#header nav a').forEach(link => {
+            try {
+                const linkPath = new URL(link.href, window.location.origin).pathname;
+                if (linkPath === window.location.pathname) {
+                    link.classList.add('active');
+                }
+            } catch {}
+        });
+    </script>
+</body>
+
+</html>
