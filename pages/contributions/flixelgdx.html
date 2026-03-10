@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlixelGDX Contribution - Eric Edwards</title>
+    <meta name="description" content="Detailed write-up of my contribution to the FlixelGDX project.">
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="icon" href="../../profilepic.png" type="image/png">
+    <script src="../../script.js" defer></script>
+</head>
+<body>
+    <header id="header">
+        <div class="nav-shell">
+            <span id="siteName">Eric Edwards</span>
+            <button class="hamburger" aria-label="Open navigation" aria-controls="mainNav" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav id="mainNav">
+                <a href="../../index.html">Home</a>
+                <a href="../work.html">Works</a>
+                <a href="../opensource.html">Open Source</a>
+                <a href="../certificates.html">Certificates</a>
+                <a href="../contact.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <div class="section-heading" style="text-align:center;">
+                    <p class="eyebrow">Open source spotlight</p>
+                    <h1>Contribution to FlixelGDX</h1>
+                    <p>This page explains what I did during my one‑off collaboration on the FlixelGDX repository.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <article class="content">
+                <h2>Background</h2>
+                <p>FlixelGDX is a game development library for Java. My recent contribution focused on enhancing its functionality and fixing issues. I also tackled other library issues, from performance improvements to documentation updates.</p>
+                <h2>My work</h2>
+                <ul>
+                    <li>Implemented new features and fixed bugs in the FlixelGDX library (<a class="inline-link" href="https://github.com/stringdotjar/flixelgdx/pull/71" target="_blank" rel="noopener noreferrer">PR #71</a>).</li>
+                </ul>
+                <div class="cta-row">
+                    <a class="btn ghost" href="../opensource.html">Back to contributions</a>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <footer style="text-align:center; color:#aaa; margin-top:2rem;">
+        <small>&copy; 2025 Eric Edwards. All rights reserved.</small>
+    </footer>
+
+    <script>
+        document.querySelectorAll('#header nav a').forEach(link => {
+            try {
+                const linkPath = new URL(link.href, window.location.origin).pathname;
+                if (linkPath === window.location.pathname) {
+                    link.classList.add('active');
+                }
+            } catch {}
+        });
+    </script>
+</body>
+</html>
