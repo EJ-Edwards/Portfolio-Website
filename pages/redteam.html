@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Red Teaming - Eric Edwards</title>
+    <meta name="description" content="Explore Eric Edwards' Red Teaming projects, tools, and methodologies for offensive security.">
+    <meta name="keywords" content="Eric Edwards, Red Teaming, Offensive Security, Cybersecurity, Projects, Tools">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="icon" href="../profilepic.png" type="image/png">
+    <script src="../script.js" defer></script>
+</head>
+<body>
+    <header id="header">
+        <div class="nav-shell">
+            <span id="siteName">Eric Edwards</span>
+            <button class="hamburger" aria-label="Open navigation" aria-controls="mainNav" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav id="mainNav">
+                <a href="../index.html">Home</a>
+                <a href="work.html">Works</a>
+                <a href="opensource.html">Open Source</a>
+                <a href="certificates.html">Certificates</a>
+                <a href="cybersecurity.html">Cybersecurity</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="section hero" style="background: linear-gradient(90deg, #1a1a2e 60%, #16213e 100%); color: #fff; padding: 3rem 0 2rem 0; text-align: center; border-radius: 0 0 1.5rem 1.5rem; margin-bottom: 2rem;">
+            <img src="../assets/redteam-icon.png" alt="Red Teaming Icon" style="width: 80px; margin-bottom: 1rem;" onerror="this.style.display='none'">
+            <h1 style="font-size: 2.5rem; margin-bottom: 0.5rem;">Red Teaming</h1>
+            <p style="max-width: 600px; margin: 0 auto 1.5rem auto; font-size: 1.2rem;">Discover my Red Teaming projects, methodologies, and tools designed to simulate real-world attacks and improve organizational security. Learn how offensive security assessments can uncover vulnerabilities and strengthen defenses.</p>
+            <a class="btn primary" href="../pages/contact.html" style="margin-top: 1rem;">Collaborate or Inquire</a>
+        </section>
+
+        <section class="section" style="margin-top: 0;">
+            <h2>Featured Red Teaming Projects</h2>
+            <div class="projects-grid">
+                <article class="project-card">
+                    <h3>Simulated Attacks</h3>
+                    <p>Realistic scenarios to test detection and response, tailored to your environment.</p>
+                </article>
+                <article class="project-card">
+                    <h3>Custom Tools</h3>
+                    <p>Scripts and frameworks for penetration testing and adversary emulation.</p>
+                </article>
+                <article class="project-card">
+                    <h3>Reporting</h3>
+                    <p>Actionable insights and recommendations for remediation, delivered clearly and confidentially.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="section" style="background: #f6f6f6; border-radius: 1rem; margin-top: 2rem;">
+            <h2>Why Red Teaming?</h2>
+            <p style="max-width: 700px; margin: 0 auto;">Red Teaming provides a holistic view of your security posture by emulating real-world adversaries. It helps organizations identify gaps, improve detection and response, and build resilience against evolving threats. My approach combines technical expertise with clear communication to deliver value at every stage.</p>
+        </section>
+
+        <section class="section" style="margin-top: 2rem; text-align: center;">
+            <a class="btn ghost" href="work.html">Back to Works</a>
+        </section>
+    </main>
+    <footer style="text-align:center; color:#aaa; margin-top:2rem;">
+        <small>&copy; 2025 Eric Edwards. All rights reserved.</small>
+    </footer>
+    <script>
+        document.querySelectorAll('#header nav a').forEach(link => {
+            try {
+                const linkPath = new URL(link.href, window.location.origin).pathname;
+                if (linkPath === window.location.pathname) {
+                    link.classList.add('active');
+                }
+            } catch {}
+        });
+    </script>
+</body>
+</html>
