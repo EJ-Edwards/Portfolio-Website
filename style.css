@@ -833,6 +833,53 @@ nav {
     margin-bottom: 0.6rem;
 }
 
+.content h3 {
+    margin-top: 2rem;
+    font-size: 1.25rem;
+    color: var(--accent);
+}
+
+.content pre {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1rem 1.25rem;
+    margin: 1rem 0;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.content pre code {
+    font-size: 0.88rem;
+    line-height: 1.6;
+    white-space: pre;
+    word-break: normal;
+    overflow-wrap: normal;
+}
+
+.content code {
+    font-family: 'Consolas', 'Courier New', monospace;
+    font-size: 0.88rem;
+    background: rgba(255, 255, 255, 0.06);
+    padding: 0.15rem 0.45rem;
+    border-radius: 6px;
+    color: var(--accent);
+}
+
+.content pre code {
+    background: none;
+    padding: 0;
+    border-radius: 0;
+    color: var(--text);
+}
+
+.content img {
+    margin: 1.25rem 0;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+}
+
 .category-section {
     margin-bottom: 4rem;
 }
@@ -968,5 +1015,31 @@ footer {
     .repo-links li {
         flex-direction: column;
         align-items: flex-start;
+    }
+
+    .works-hero h1 {
+        font-size: 1.75rem;
+    }
+
+    .content {
+        max-width: 100%;
+    }
+
+    .content h2 {
+        font-size: 1.35rem;
+    }
+
+    .content h3 {
+        font-size: 1.1rem;
+    }
+
+    .content pre {
+        padding: 0.75rem;
+        font-size: 0.82rem;
+        border-radius: 8px;
+    }
+
+    .section {
+        padding: 2.5rem 0;
     }
 }
