@@ -1,0 +1,97 @@
+"""
+Modified RSA Signature Forgery Script
+
+Original concept/script by Alphabey (YouTube / CTF walkthrough)
+Source: https://pastebin.com/MwyawYK8
+
+Modifications by EJ:
+- Added dynamic username input
+- Added dynamic message input
+- Improved usability for repeated exploitation
+- Refactored input handling
+
+Purpose:
+Educational use for CTF challenges involving weak RSA key generation
+and predictable seed-based cryptography.
+
+"""
+
+import hashlib
+from sympy import nextprime
+from Crypto.PublicKey import RSA
+from Crypto.Signature import pss
+from Crypto.Hash import SHA256
+import base64
+import sys
+
+TARGET_USER = ""  
+
+def target_user():
+    if TARGET_USER == "":
+        return input("Enter target username (default: admin): ") or "admin"
+    return TARGET_USER
+
+
+def get_message():
+    if len(sys.argv) > 1:
+        return " ".join(sys.argv[1:])
+    
+    return input("Enter message to sign: ")
+
+
+def generate_admin_key():
+    seed_str = f"{target_user()}_lovenote_2026_valentine"
+    seed_bytes = seed_str.encode('utf-8')
+
+    sha256_p = hashlib.sha256(seed_bytes).hexdigest()
+    p = nextprime(int(sha256_p, 16))
+
+    sha256_q = hashlib.sha256(seed_bytes + b"pki").hexdigest()
+    q = nextprime(int(sha256_q, 16))
+
+    n = p * q
+    e = 65537
+    phi = (p - 1) * (q - 1)
+    d = pow(e, -1, phi)
+
+    return RSA.construct((n, e, d))
+
+
+def forge_signature(key, message):
+    message_bytes = message.encode('utf-8')
+    h = SHA256.new(message_bytes)
+
+    modBits = key.size_in_bits()
+    emLen = (modBits - 1 + 7) // 8
+    maxSalt = emLen - h.digest_size - 2
+
+    if maxSalt < 0:
+        raise ValueError("Key too small")
+
+    signer = pss.new(key, salt_bytes=maxSalt)
+    signature = signer.sign(h)
+
+    return signature
+
+
+if __name__ == '__main__':
+    try:
+        message = get_message()
+        admin_key = generate_admin_key()
+        sig_bytes = forge_signature(admin_key, message)
+
+        print("\n" + "="*60)
+        print(">>> SIGNATURE OUTPUT <<<")
+        print("="*60)
+
+        print("\n[Message]")
+        print(message)
+
+        print("\n[HEX]")
+        print(sig_bytes.hex())
+        print("\n" + "="*60)
+
+    except Exception as e:
+        print(f"[!] Error: {e}")
+
+

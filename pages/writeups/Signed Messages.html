@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THM: Signed Messages - Eric Edwards</title>
+    <meta name="description" content="THM: Signed Messages — red team writeup by Eric Edwards.">
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="icon" href="../../profilepic.png" type="image/png">
+    <script src="../../script.js" defer></script>
+</head>
+
+<body>
+    <header id="header">
+        <div class="nav-shell">
+            <span id="siteName">Eric Edwards</span>
+            <button class="hamburger" aria-label="Open navigation" aria-controls="mainNav" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav id="mainNav">
+                <a href="../../index.html">Home</a>
+                <a href="../work.html">Works</a>
+                <a href="../opensource.html">Open Source</a>
+                <a href="../certificates.html">Certificates</a>
+                <a href="../contact.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="works-hero section">
+            <p class="eyebrow">Writeup</p>
+            <h1>THM: Signed Messages</h1>
+            <p>A walkthrough of the TryHackMe Signed Messages challenge covering digital signatures, message
+                authentication, and cryptographic verification techniques.</p>
+            <div class="tech-tags" style="margin-top: 1rem;">
+                <span class="tag">TryHackMe</span>
+                <span class="tag">Cryptography</span>
+                <span class="tag">Digital Signatures</span>
+                <span class="tag">Message Authentication</span>
+            </div>
+        </section>
+
+        <section class="section">
+            <article class="content">
+
+                <h2>Overview</h2>
+                <p>Signed Messages is a TryHackMe room focused on understanding digital signatures and message
+                    authentication. The challenge explores how cryptographic signing works, how to verify the integrity
+                    and authenticity of messages, and the consequences of improper signature validation. It reinforces
+                    core concepts in applied cryptography that are essential for both offensive and defensive security
+                    practitioners.</p>
+
+                <!-- ────────────────────────────────────────────── -->
+                <h2>Walkthrough</h2>
+
+                <p><strong>Step 1 —</strong> </p>
+                <pre><code></code></pre>
+                 <img src="../screenshotsproof/SignedMessage/signed1.png" alt=""> 
+                 <p> What I did here was I used gobuster to enumerate directories and files on the target server.</p>
+
+                <p><strong>Step 2 —</strong> </p>
+                <pre><code></code></pre>
+                 <img src="../screenshotsproof/SignedMessage/signed2.png" alt=""> 
+                 <p> In this step, I went to the debug endpoint of the website where I found sensitive information that could be exploited.</p>
+
+                <p><strong>Step 3 —</strong> </p>
+                <pre><code></code></pre>
+                 <img src="../screenshotsproof/SignedMessage/signed3.png" alt=""> 
+                 <p>I was able to login as Admin due to their being no password set.</p>
+
+                <p><strong>Step 4 —</strong> </p>
+                <pre><code></code></pre>
+                 <img src="../screenshotsproof/SignedMessage/signed4.png" alt=""> 
+                 <p>I decided to logout of Admin and create a new user account to start exploiting the system from a different perspective.</p>
+
+                <p><strong>Step 5 —</strong> </p>
+                <pre><code></code></pre>
+                 <img src="../screenshotsproof/SignedMessage/signed5.png" alt=""> 
+                 <p> I developed a script to exploit a deterministic RSA key generation flaw, allowing me to reconstruct private keys from usernames and forge valid signed messages.</p>
+
+                <p><strong>Step 6 —</strong> </p>
+                <pre><code></code></pre>
+                  <p><a href="../screenshotsproof/SignedMessage/customsolver.py.txt" target="_blank">View the full script (customsolver.py)</a></p>
+                 <img src="../screenshotsproof/SignedMessage/signed6-2.png" alt=""> 
+                 <p>I modified a script so that way I can be able to forge signed messages as the admin.</p>
+                
+                <p><strong>Step 7 —</strong> </p>
+                <pre><code></code></pre>
+                 <img src="../screenshotsproof/SignedMessage/signed7.png" alt=""> 
+                 <p> I was able to successfully forge a signed message as the admin, demonstrating the vulnerability in the deterministic RSA key generation.</p>
+
+                <p><strong>Step 8 —</strong> </p>
+                <p>Here, is where I was able to find the flag the flag is THM{PR3D1CT4BL3_S33D5_BR34K_H34RT5}</p>
+
+                <h2>Summary</h2>
+                <p>This challenge highlighted the importance of secure key generation and the risks associated with deterministic cryptographic operations. By exploiting a flaw in the RSA key generation process, I was able to forge valid signed messages, demonstrating the potential impact of such vulnerabilities.</p>
+                <p>This challenged also shows that this website should have passwords set for all user accounts to prevent unauthorized access.</p>
+
+                <h2>Tools Used</h2>
+                <ul>
+                    <li>Python — scripting cryptographic operations.</li>
+                    <li>Gobuster — directory and file enumeration.</li>
+                </ul>
+
+             
+
+                <div class="cta-row">
+                    <a class="btn ghost" href="../redteam.html">Back to Red Teaming</a>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <small>&copy; 2025 Eric Edwards. All rights reserved.</small>
+    </footer>
+
+    <script>
+        document.querySelectorAll('#header nav a').forEach(link => {
+            try {
+                const linkPath = new URL(link.href, window.location.origin).pathname;
+                if (linkPath === window.location.pathname) {
+                    link.classList.add('active');
+                }
+            } catch { }
+        });
+    </script>
+</body>
+
+</html>
