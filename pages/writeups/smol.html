@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THM: Smol - Eric Edwards</title>
+    <meta name="description" content="THM: Smol — red team writeup by Eric Edwards.">
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="icon" href="../../profilepic.png" type="image/png">
+    <script src="../../script.js" defer></script>
+</head>
+
+<body>
+    <header id="header">
+        <div class="nav-shell">
+            <span id="siteName">Eric Edwards</span>
+            <button class="hamburger" aria-label="Open navigation" aria-controls="mainNav" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav id="mainNav">
+                <a href="../../index.html">Home</a>
+                <a href="../work.html">Works</a>
+                <a href="../opensource.html">Open Source</a>
+                <a href="../certificates.html">Certificates</a>
+                <a href="../contact.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="works-hero section">
+            <p class="eyebrow">Writeup</p>
+            <h1>THM: Smol</h1>
+            <p>A walkthrough of the TryHackMe Smol machine covering WordPress exploitation, vulnerable plugin abuse,
+                backdoored plugin analysis, and privilege escalation.</p>
+            <div class="tech-tags" style="margin-top: 1rem;">
+                <span class="tag">TryHackMe</span>
+                <span class="tag">WordPress</span>
+                <span class="tag">Plugin Exploitation</span>
+                <span class="tag">Privilege Escalation</span>
+            </div>
+        </section>
+
+        <section class="section">
+            <article class="content">
+
+                <h2>Overview</h2>
+                <p>At the heart of Smol is a WordPress website, a common target due to its extensive plugin ecosystem. The machine showcases a publicly known vulnerable plugin, highlighting the risks of neglecting software updates and security patches. Enhancing the learning experience, Smol introduces a backdoored plugin, emphasizing the significance of meticulous code inspection before integrating third-party components.</p>
+
+                <!-- ────────────────────────────────────────────── -->
+                <h2>Walkthrough</h2>
+
+                <p><strong>Step 1 —</strong> </p>
+                <pre><code></code></pre>
+                <!-- <img src="../screenshotsproof/Smol%20THM/.png" alt=""> -->
+
+                <p><strong>Step 2 —</strong> </p>
+                <pre><code></code></pre>
+                <!-- <img src="../screenshotsproof/Smol%20THM/.png" alt=""> -->
+
+                <p><strong>Step 3 —</strong> </p>
+                <pre><code></code></pre>
+                <!-- <img src="../screenshotsproof/Smol%20THM/.png" alt=""> -->
+
+                <p><strong>Step 4 —</strong> </p>
+                <pre><code></code></pre>
+                <!-- <img src="../screenshotsproof/Smol%20THM/.png" alt=""> -->
+
+                <p><strong>Step 5 —</strong> </p>
+                <pre><code></code></pre>
+                <!-- <img src="../screenshotsproof/Smol%20THM/.png" alt=""> -->
+
+                <p><strong>Step 6 —</strong> </p>
+                <pre><code></code></pre>
+                <!-- <img src="../screenshotsproof/Smol%20THM/.png" alt=""> -->
+
+                <p><strong>Step 7 —</strong> </p>
+                <pre><code></code></pre>
+                <!-- <img src="../screenshotsproof/Smol%20THM/.png" alt=""> -->
+
+                <p><strong>Step 8 —</strong> </p>
+                <pre><code></code></pre>
+                <!-- <img src="../screenshotsproof/Smol%20THM/.png" alt=""> -->
+
+                <!-- ────────────────────────────────────────────── -->
+                <h2>Summary</h2>
+                <p></p>
+
+                <h2>Tools Used</h2>
+                <ul>
+                    <li>Nmap — port scanning and service detection.</li>
+                    <li>WPScan — WordPress enumeration.</li>
+                    <li>Searchsploit — exploit database lookup.</li>
+                    <li>cURL / Burp Suite — HTTP request crafting.</li>
+                    <li>Netcat — reverse shell listener.</li>
+                    <li>LinPEAS / manual enumeration — privilege escalation.</li>
+                </ul>
+
+                <h2>Lessons Learned</h2>
+                <ul>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+
+                <div class="cta-row">
+                    <a class="btn ghost" href="../redteam.html">Back to Red Teaming</a>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <small>&copy; 2025 Eric Edwards. All rights reserved.</small>
+    </footer>
+
+    <script>
+        document.querySelectorAll('#header nav a').forEach(link => {
+            try {
+                const linkPath = new URL(link.href, window.location.origin).pathname;
+                if (linkPath === window.location.pathname) {
+                    link.classList.add('active');
+                }
+            } catch { }
+        });
+    </script>
+</body>
+
+</html>
