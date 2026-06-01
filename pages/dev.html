@@ -1,23 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Development Portfolio</title>
+    <title>Development Portfolio - Eric Edwards</title>
+    <meta name="description" content="A curated development portfolio showcasing Eric Edwards' modern web apps, APIs, and tooling projects.">
+    <meta name="keywords" content="Eric Edwards, development portfolio, web apps, APIs, full-stack, security tooling">
     <link rel="stylesheet" href="../style.css">
+    <link rel="icon" href="../profilepic.png" type="image/png">
+    <script src="../script.js" defer></script>
 </head>
+
 <body>
     <header id="header">
         <div class="nav-shell">
-            <span id="siteName">Eric Edwards</span>
+            <a class="brand" href="../index.html">Eric Edwards</a>
             <button class="hamburger" aria-label="Open navigation" aria-controls="mainNav" aria-expanded="false">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
-            <nav id="mainNav">
+            <nav id="mainNav" aria-label="Primary navigation">
                 <a href="../index.html">Home</a>
-                <a href="work.html" class="active">Works</a>
+                <a href="work.html">Works</a>
                 <a href="opensource.html">Open Source</a>
                 <a href="certificates.html">Certificates</a>
                 <a href="contact.html">Contact</a>
@@ -26,134 +32,157 @@
     </header>
 
     <main>
-        <section class="hero-section">
+        <section class="section hero-section">
             <div class="container">
-                <h1>Development Portfolio</h1>
-                <p class="subtitle">Full-Stack Development | Web Applications | API Design</p>
+                <div class="section-heading">
+                    <p class="eyebrow">Development Portfolio</p>
+                    <h1>Modern software, secure tools, and scalable platforms.</h1>
+                    <p class="section-description">A curated selection of development projects focused on full-stack systems, automation, and security-aware tooling.</p>
+                </div>
             </div>
         </section>
 
-        <section class="content-section">
-            <div class="container">
-                <div class="category-section">
-                    <h2>Recent Projects</h2>
-                    <p class="section-description">Latest full-stack applications and development work</p>
-
-                        <div class="project-card">
-                            <h3>Royal Score</h3>
-                            <p class="project-description">Multiplayer card game with socket-powered turns, room-based matchmaking, and adaptive UI for any device.</p>
-                            <div class="tech-tags">
-                                <span class="tag">Node.js</span>
-                                <span class="tag">Vanilla JS</span>
-                                <span class="tag">HTML</span>
-                                <span class="tag">CSS</span>
-                            </div>
-                            <a href="https://github.com/EJ-Edwards/Royal-Score" class="btn-secondary" target="_blank" rel="noopener noreferrer">View Repository</a>
-                        </div>
-
-                        <div class="project-card">
-                            <h3>RedSec AI</h3>
-                            <p class="project-description">SaaS Company focusing on cybersecurity solutions for small to medium-sized businesses, Startups and SaaS and by using AI as a way to help. Built for the website and mobile applications.</p>
-                            <div class="tech-tags">
-                                <span class="tag">Next.js</span>
-                                <span class="tag">Python</span>
-                                <span class="tag">Dart</span>
-                            </div>
-                            <a href="https://redsec-ai.vercel.app/" class="btn-secondary" target="_blank" rel="noopener noreferrer">Launch Project</a>
-                        </div>
-                            <div class="project-card">
-                                <h3>Port Intel</h3>
-                                <p class="project-description">Cloud-first reconnaissance platform that detects open, closed, and filtered ports, then wraps the scan data in tactical dashboards for security teams.</p>
-                                <div class="tech-tags">
-                                    <span class="tag">React</span>
-                                    <span class="tag">Node.js</span>
-                                    <span class="tag">Express</span>
-                                    <span class="tag">Firebase Auth</span>
-                                    <span class="tag">PostgreSQL</span>
-                                </div>
-                                <a href="https://portintel.tech/" class="btn-secondary" target="_blank" rel="noopener noreferrer">Launch Project</a>
-                            </div>
-                            <div class="project-card">
-                                <h3>Remote Admin Tool</h3>
-                                <p class="project-description">A secure Python remote administration tool that streams telemetry, runs commands, and manages files through a live dashboard with RBAC.</p>
-                                <div class="tech-tags">
-                                    <span class="tag">Python</span>
-                                    <span class="tag">Flask</span>
-                                    <span class="tag">WebSockets</span>
-                                    <span class="tag">SQLite</span>
-                                </div>
-                                <a href="https://github.com/EJ-Edwards/Remote-Admin-Tool" class="btn-secondary" target="_blank" rel="noopener noreferrer">View Repository</a>
-                            </div>
-
-                            <div class="project-card">
-                                <h3>Cyber-Battle</h3>
-                                <p class="project-description">CLI-based cybersecurity simulation game for practicing attack and defense strategies.</p>
-                                <div class="tech-tags">
-                                    <span class="tag">Golang</span>
-                                </div>
-                                <a href="https://github.com/EJ-Edwards/Cyber-Battle" class="btn-secondary" target="_blank" rel="noopener noreferrer">View Repository</a>
-                            </div>
-
-                            <div class="project-card">
-                                <h3>Star Explorer</h3>
-                                <p class="project-description">CLI-based space exploration game.</p>
-                                <div class="tech-tags">
-                                    <span class="tag">Node.JS</span>
-                                    <span class="tag">Golang</span>
-                                </div>
-                                <a href="https://github.com/EJ-Edwards/Star-Explorer" class="btn-secondary" target="_blank" rel="noopener noreferrer">View Repository</a>
-                            </div>
-
-                            <div class="project-card">
-                                <h3>Dev-Tool-Box CLI</h3>
-                                <p class="project-description">A command-line interface tool for developers, providing various utilities and games.</p>
-                                <div class="tech-tags">
-                                    <span class="tag">Node.JS</span>
-                                    <span class="tag">Python</span>
-                                    <span class="tag">C#</span>
-                                </div>
-                                <a href="https://github.com/EJ-Edwards/Dev-Tool-Box-CLI" class="btn-secondary" target="_blank" rel="noopener noreferrer">View Repository</a>
-                            </div>
-
-                            <div class="project-card">
-                                <h3>APToolkit</h3>
-                                <p class="project-description">A APT-style toolkit for cybersecurity operations. Inspired by real-world attack techniques and tactics.</p>
-                                <div class="tech-tags">
-                                    <span class="tag">Python</span>
-                                    <span class="tag">Golang</span>
-                                </div>
-                                <a href="https://github.com/EJ-Edwards/APToolkit" class="btn-secondary" target="_blank" rel="noopener noreferrer">View Repository</a>
-                            </div>
-
-                            <div class="project-card">
-                                <h3>Crust Browser</h3>
-                                <p class="project-description">A CLI web browser built with Rust and Node.JS.</p>
-                                <div class="tech-tags">
-                                    <span class="tag">Rust</span>
-                                    <span class="tag">Node.JS</span>
-                                </div>
-                                <a href="https://github.com/EJ-Edwards/CrustBrowser" class="btn-secondary" target="_blank" rel="noopener noreferrer">View on Github</a>
-                            </div>
-                        </div>
+        <section class="section project-gallery">
+            <div class="section-heading">
+                <p class="eyebrow">Selected projects</p>
+                <h2>Recent engineering work</h2>
+                <p>These builds showcase frontend polish, backend reliability, and developer tooling designed for real usage.</p>
+            </div>
+            <div class="projects-grid">
+                <article class="project-card">
+                    <div class="project-meta">
+                        <span class="badge">Web App</span>
+                        <span class="timeline">2025</span>
                     </div>
-                </div>
+                    <h2>Royal Score</h2>
+                    <p>Multiplayer card game with socket-backed matchmaking and a UI built for quick turns on mobile and desktop.</p>
+                    <div class="tech-tags">
+                        <span class="tag">Node.js</span>
+                        <span class="tag">Vanilla JS</span>
+                        <span class="tag">HTML</span>
+                        <span class="tag">CSS</span>
+                    </div>
+                    <a href="https://github.com/EJ-Edwards/Royal-Score" class="btn-secondary" target="_blank" rel="noopener noreferrer">View repository</a>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-meta">
+                        <span class="badge">Cybersecurity</span>
+                        <span class="timeline">2026</span>
+                    </div>
+                    <h2>RedSec AI</h2>
+                    <p>AI-powered security assistant for red teams, built with modern tooling and a secure frontend dashboard.</p>
+                    <div class="tech-tags">
+                        <span class="tag">Next.js</span>
+                        <span class="tag">Python</span>
+                        <span class="tag">Dart</span>
+                    </div>
+                    <a href="https://redsec-ai.vercel.app/" class="btn-secondary" target="_blank" rel="noopener noreferrer">Launch project</a>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-meta">
+                        <span class="badge">Recon</span>
+                        <span class="timeline">2026</span>
+                    </div>
+                    <h2>Port Intel</h2>
+                    <p>Cloud-first reconnaissance dashboard that turns port scan data into actionable insights for security teams.</p>
+                    <div class="tech-tags">
+                        <span class="tag">React</span>
+                        <span class="tag">Node.js</span>
+                        <span class="tag">Express</span>
+                        <span class="tag">PostgreSQL</span>
+                    </div>
+                    <a href="https://portintel.tech/" class="btn-secondary" target="_blank" rel="noopener noreferrer">Launch project</a>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-meta">
+                        <span class="badge">Admin Tool</span>
+                        <span class="timeline">2025</span>
+                    </div>
+                    <h2>Remote Admin Tool</h2>
+                    <p>Secure remote management tool with telemetry, RBAC, and command execution built on a lightweight web dashboard.</p>
+                    <div class="tech-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">Flask</span>
+                        <span class="tag">WebSockets</span>
+                    </div>
+                    <a href="https://github.com/EJ-Edwards/Remote-Admin-Tool" class="btn-secondary" target="_blank" rel="noopener noreferrer">View repository</a>
+                </article>
+            </div>
+        </section>
+
+        <section class="section project-gallery">
+            <div class="section-heading">
+                <p class="eyebrow">Additional work</p>
+                <h2>CLI and developer tools</h2>
+                <p>Tools that demonstrate scripting, automation, and platform-agnostic utility design.</p>
+            </div>
+            <div class="projects-grid">
+                <article class="project-card">
+                    <div class="project-meta">
+                        <span class="badge">CLI</span>
+                        <span class="timeline">2026</span>
+                    </div>
+                    <h2>Cyber-Battle</h2>
+                    <p>Cybersecurity simulation game built for practicing attack and defense concepts in a command-line environment.</p>
+                    <div class="tech-tags">
+                        <span class="tag">Go</span>
+                    </div>
+                    <a href="https://github.com/EJ-Edwards/Cyber-Battle" class="btn-secondary" target="_blank" rel="noopener noreferrer">View repository</a>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-meta">
+                        <span class="badge">CLI</span>
+                        <span class="timeline">2025</span>
+                    </div>
+                    <h2>Star Explorer</h2>
+                    <p>CLI-based exploration game with immersive terminal-style interactions and lightweight game state persistence.</p>
+                    <div class="tech-tags">
+                        <span class="tag">Node.js</span>
+                        <span class="tag">Go</span>
+                    </div>
+                    <a href="https://github.com/EJ-Edwards/Star-Explorer" class="btn-secondary" target="_blank" rel="noopener noreferrer">View repository</a>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-meta">
+                        <span class="badge">Tooling</span>
+                        <span class="timeline">2025</span>
+                    </div>
+                    <h2>Dev-Tool-Box CLI</h2>
+                    <p>Toolkit for developers with utilities, productivity helpers, and small automation scripts in one package.</p>
+                    <div class="tech-tags">
+                        <span class="tag">Node.js</span>
+                        <span class="tag">Python</span>
+                        <span class="tag">C#</span>
+                    </div>
+                    <a href="https://github.com/EJ-Edwards/Dev-Tool-Box-CLI" class="btn-secondary" target="_blank" rel="noopener noreferrer">View repository</a>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-meta">
+                        <span class="badge">Tooling</span>
+                        <span class="timeline">2026</span>
+                    </div>
+                    <h2>APToolkit</h2>
+                    <p>APT-inspired operations toolkit built for defensive research, automation, and red team prototyping.</p>
+                    <div class="tech-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">Go</span>
+                    </div>
+                    <a href="https://github.com/EJ-Edwards/APToolkit" class="btn-secondary" target="_blank" rel="noopener noreferrer">View repository</a>
+                </article>
+            </div>
+        </section>
     </main>
 
-    <footer>
-        <p>&copy; 2025 to 2026 Eric Edwards. All rights reserved.</p>
+    <footer class="site-footer">
+        <small>© 2025–2026 Eric Edwards. All rights reserved.</small>
     </footer>
-
-    <script src="script.js"></script>
-
-    <script>
-        document.querySelectorAll('#header nav a').forEach(link => {
-            try {
-                const linkPath = new URL(link.href, window.location.origin).pathname;
-                if (linkPath === window.location.pathname) {
-                    link.classList.add('active');
-                }
-            } catch {}
-        });
-    </script>
 </body>
+
 </html>
+

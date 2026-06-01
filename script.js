@@ -1,30 +1,20 @@
 window.addEventListener('DOMContentLoaded', () => {
-    document.querySelectorAll('a').forEach(link => {
-        link.addEventListener('mouseenter', () => {
-            link.style.transform = 'scale(1.08)';
-        });
-        link.addEventListener('mouseleave', () => {
-            link.style.transform = 'scale(1)';
-        });
-    });
-
     const hamburger = document.querySelector('.hamburger');
     const nav = document.getElementById('mainNav');
+
     if (hamburger && nav) {
-        hamburger.addEventListener('click', function() {
+        hamburger.addEventListener('click', () => {
             const isOpen = nav.classList.toggle('open');
             hamburger.setAttribute('aria-expanded', isOpen);
         });
-        
-        // Close menu when clicking outside
-        document.addEventListener('click', function(e) {
-            if (!hamburger.contains(e.target) && !nav.contains(e.target)) {
+
+        document.addEventListener('click', (event) => {
+            if (!nav.contains(event.target) && !hamburger.contains(event.target)) {
                 nav.classList.remove('open');
                 hamburger.setAttribute('aria-expanded', false);
             }
         });
-        
-        // Close menu when clicking on a link
+
         nav.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
                 nav.classList.remove('open');
@@ -33,81 +23,54 @@ window.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
+    const updateActiveLinks = () => {
+        const currentPath = window.location.pathname.replace(/\/$/, '');
+        const currentHash = window.location.hash;
+        document.querySelectorAll('#header nav a').forEach(link => {
+            const target = link.getAttribute('href');
+            link.classList.remove('active');
+            if (!target) return;
+
+            if (target.startsWith('#') && currentHash === target) {
+                link.classList.add('active');
+                return;
+            }
+
+            try {
+                const targetUrl = new URL(target, window.location.origin);
+                const targetPath = targetUrl.pathname.replace(/\/$/, '');
+                if (targetPath === currentPath) {
+                    link.classList.add('active');
+                }
+            } catch (error) {
+                // ignore invalid URLs
+            }
+        });
     };
+
+    updateActiveLinks();
+
+    const header = document.getElementById('header');
+    const updateHeaderStyle = () => {
+        if (!header) return;
+        header.classList.toggle('scrolled', window.scrollY > 20);
+    };
+    window.addEventListener('scroll', updateHeaderStyle);
+    updateHeaderStyle();
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
+                entry.target.classList.add('is-visible');
             }
         });
-    }, observerOptions);
-
-    document.querySelectorAll('.project-card, .contact-card, .certificate-item').forEach((card, index) => {
-        card.style.opacity = '0';
-        card.style.transform = 'translateY(50px)';
-        card.style.transition = `all 0.6s ease ${index * 0.1}s`;
-        observer.observe(card);
+    }, {
+        threshold: 0.15,
+        rootMargin: '0px 0px -80px 0px'
     });
 
-    const profilePic = document.getElementById('pic');
-    if (profilePic) {
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const rate = scrolled * -0.5;
-            profilePic.style.transform = `translateY(${rate}px)`;
-        });
-    }
-
-    // Typing effect for main headings
-    const mainHeading = document.querySelector('#about h1, #Works h1, section h1');
-    if (mainHeading) {
-        const text = mainHeading.textContent;
-        mainHeading.textContent = '';
-        let i = 0;
-        
-        const typeWriter = () => {
-            if (i < text.length) {
-                mainHeading.textContent += text.charAt(i);
-                i++;
-                setTimeout(typeWriter, 100);
-            }
-        };
-        
-        setTimeout(typeWriter, 500);
-    }
-
-    // Mouse cursor trail effect
-    let mouseTrail = [];
-    document.addEventListener('mousemove', (e) => {
-        mouseTrail.push({x: e.clientX, y: e.clientY});
-        if (mouseTrail.length > 20) mouseTrail.shift();
-        
-        // Create trail elements
-        const trail = document.createElement('div');
-        trail.style.cssText = `
-            position: fixed;
-            width: 4px;
-            height: 4px;
-            background: radial-gradient(circle, #00ff41, transparent);
-            border-radius: 50%;
-            pointer-events: none;
-            z-index: 9999;
-            left: ${e.clientX}px;
-            top: ${e.clientY}px;
-            opacity: 0.8;
-            transition: all 0.3s ease;
-        `;
-        document.body.appendChild(trail);
-        
-        setTimeout(() => {
-            trail.style.opacity = '0';
-            trail.style.transform = 'scale(0)';
-            setTimeout(() => trail.remove(), 300);
-        }, 100);
+    document.querySelectorAll('.project-card, .focus-card, .profile-card, .story, .section-heading, .cta-row, .panel-card, .skill-card, .service-card, .community-card, .building-card, .cta-panel').forEach(item => {
+        item.classList.add('fade-in');
+        observer.observe(item);
     });
 });
