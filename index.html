@@ -3,217 +3,364 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eric Edwards Portfolio</title>
-    <meta name="description"
-        content="Portfolio website for Eric Edwards, a teen full-stack engineer and software enthusiast. View projects, bio, and contact info.">
-    <meta name="keywords"
-        content="Eric Edwards, Portfolio, Developer, Full-Stack, Projects, Software, Web, API, Python, JavaScript, HTML, CSS, Git, GitHub">
-    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>EJ — Software Engineer &amp; AI Builder</title>
+    <meta name="description" content="EJ's portfolio, styled as a tiny desktop operating system: software projects, stack, résumé and contact links from a software engineer and AI builder.">
+    <meta name="theme-color" content="#9ed8ff">
+    <meta property="og:title" content="EJ — Software Engineer &amp; AI Builder">
+    <meta property="og:description" content="Explore EJ's little corner of the internet: projects, stack, résumé and contact.">
     <link rel="icon" href="profilepic.png" type="image/png">
-    <script src="script.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Inter:wght@400;600&family=JetBrains+Mono:wght@500&family=VT323&display=swap">
+    <link rel="stylesheet" href="os.css">
+    <script>document.documentElement.classList.add('js');try{var t=localStorage.getItem('ej-theme');if(t){document.documentElement.dataset.theme=t}}catch(e){}</script>
+    <script src="os.js" defer></script>
 </head>
 
 <body>
-    <header id="header">
-        <div class="nav-shell">
-            <a class="brand" href="#hero">Eric Edwards</a>
-            <button class="hamburger" aria-label="Open navigation" aria-controls="mainNav" aria-expanded="false">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <nav id="mainNav" aria-label="Primary navigation">
-                <a href="index.html" class="active">Home</a>
-                <a href="pages/work.html">Works</a>
-                <a href="pages/opensource.html">Open Source</a>
-                <a href="pages/certificates.html">Certificates</a>
-                <a href="pages/contact.html">Contact</a>
-            </nav>
-        </div>
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+        <defs>
+            <symbol id="i-folder" viewBox="0 0 24 24"><path fill="currentColor" d="M2 5h8l2 2h10v13H2z"/></symbol>
+            <symbol id="i-smile" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M8 3h8v2h3v3h2v8h-2v3h-3v2H8v-2H5v-3H3V8h2V5h3zM8 9h2v3H8zM14 9h2v3h-2zM7 14h2v2h6v-2h2v3H7z"/></symbol>
+            <symbol id="i-stack" viewBox="0 0 24 24"><path fill="currentColor" d="M3 4h18v4H3zM3 10h18v4H3zM3 16h18v4H3z"/></symbol>
+            <symbol id="i-doc" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M5 2h10l4 4v16H5zM8 10h8v2H8zM8 14h8v2H8zM8 18h5v2H8z"/></symbol>
+            <symbol id="i-git" viewBox="0 0 24 24"><path fill="currentColor" d="M6 3h4v4H6zM14 9h4v4h-4zM6 17h4v4H6zM7.5 7h1v10h-1zM8 11h6v1.5H8z"/></symbol>
+            <symbol id="i-mail" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M2 5h20v14H2zM4 8l8 5 8-5v9H4z"/></symbol>
+            <symbol id="i-spark" viewBox="0 0 24 24"><path fill="currentColor" d="M12 1l2.2 8.8L23 12l-8.8 2.2L12 23l-2.2-8.8L1 12l8.8-2.2z"/></symbol>
+            <symbol id="i-home" viewBox="0 0 24 24"><path fill="currentColor" d="M12 3l10 9h-3v9h-5v-6h-4v6H5v-9H2z"/></symbol>
+            <symbol id="i-min" viewBox="0 0 24 24"><path fill="currentColor" d="M5 17h14v3H5z"/></symbol>
+            <symbol id="i-max" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M4 4h16v16H4zM7 8v9h10V8z"/></symbol>
+            <symbol id="i-close" viewBox="0 0 24 24"><path fill="currentColor" d="M5 3l7 7 7-7 2 2-7 7 7 7-2 2-7-7-7 7-2-2 7-7-7-7z"/></symbol>
+            <symbol id="i-back" viewBox="0 0 24 24"><path fill="currentColor" d="M15 3l-9 9 9 9 2.5-2.5L11 12l6.5-6.5z"/></symbol>
+            <symbol id="i-ext" viewBox="0 0 24 24"><path fill="currentColor" d="M7 5h12v12h-2.5V9.3L6.8 19 5 17.2 14.7 7.5H7z"/></symbol>
+            <symbol id="i-arrow" viewBox="0 0 24 24"><path fill="currentColor" d="M10 4l-8 8 8 8v-5h12V9H10z"/></symbol>
+            <symbol id="i-moon" viewBox="0 0 24 24"><path fill="currentColor" d="M20 14.5A8.5 8.5 0 0 1 9.5 4 8.5 8.5 0 1 0 20 14.5z"/></symbol>
+            <symbol id="i-star" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2l3 7 7.5.7-5.6 5 1.7 7.4L12 18l-6.6 4.1 1.7-7.4-5.6-5L9 9z"/></symbol>
+            <symbol id="i-lock" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M6 10V7a6 6 0 0 1 12 0v3h2v12H4V10zM8 10h8V7a4 4 0 0 0-8 0zM11 14h2v4h-2z"/></symbol>
+            <symbol id="i-badge" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M3 3h18v14H3zM6 7h12v2H6zM6 11h7v2H6zM14 17l-1 5 3-2 3 2-1-5z"/></symbol>
+        </defs>
+    </svg>
+
+    <a class="skip" href="#launcher">Skip to applications</a>
+
+    <div class="wallpaper" aria-hidden="true">
+        <svg viewBox="0 0 1440 900" preserveAspectRatio="xMidYMax slice" focusable="false">
+            <defs>
+                <linearGradient id="g-orb" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0" stop-color="#ffc2ee"/><stop offset=".35" stop-color="#c9b6ff"/><stop offset=".65" stop-color="#8defe0"/><stop offset="1" stop-color="#fff1a0"/>
+                </linearGradient>
+                <linearGradient id="g-hill-back" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d4f77a"/><stop offset="1" stop-color="#8ed61f"/></linearGradient>
+                <linearGradient id="g-hill-front" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#b5ec3f"/><stop offset="1" stop-color="#3f7907"/></linearGradient>
+            </defs>
+            <g class="stars" fill="#fff">
+                <rect class="twinkle" x="120" y="90" width="6" height="6"/><rect class="twinkle" x="340" y="200" width="4" height="4"/><rect class="twinkle" x="560" y="60" width="6" height="6"/>
+                <rect class="twinkle" x="760" y="150" width="4" height="4"/><rect class="twinkle" x="980" y="80" width="6" height="6"/><rect class="twinkle" x="1250" y="240" width="4" height="4"/>
+                <rect class="twinkle" x="1370" y="110" width="6" height="6"/><rect class="twinkle" x="220" y="320" width="4" height="4"/><rect class="twinkle" x="880" y="300" width="6" height="6"/>
+            </g>
+            <circle cx="1180" cy="190" r="130" fill="url(#g-orb)" opacity=".85"/>
+            <circle cx="1180" cy="190" r="170" fill="none" stroke="#fff" stroke-width="3" opacity=".55"/>
+            <circle cx="1180" cy="190" r="205" fill="none" stroke="#fff" stroke-width="1.5" stroke-dasharray="6 10" opacity=".5"/>
+            <g class="cloud" fill="#fff" opacity=".92">
+                <ellipse cx="260" cy="210" rx="110" ry="34"/><ellipse cx="200" cy="190" rx="60" ry="34"/><ellipse cx="320" cy="186" rx="70" ry="38"/>
+            </g>
+            <g class="cloud c2" fill="#fff" opacity=".85">
+                <ellipse cx="760" cy="420" rx="130" ry="36"/><ellipse cx="700" cy="400" rx="60" ry="34"/><ellipse cx="820" cy="396" rx="78" ry="40"/>
+            </g>
+            <g class="cloud" fill="#fff" opacity=".8">
+                <ellipse cx="1260" cy="520" rx="100" ry="30"/><ellipse cx="1210" cy="504" rx="50" ry="28"/><ellipse cx="1300" cy="500" rx="58" ry="32"/>
+            </g>
+            <path d="M0 690C240 600 520 640 760 700S1200 760 1440 650V900H0z" fill="url(#g-hill-back)"/>
+            <path d="M0 790C300 700 700 760 1000 800S1300 780 1440 740V900H0z" fill="url(#g-hill-front)"/>
+            <g fill="#fff" opacity=".9">
+                <path d="M520 150l8 26 26 8-26 8-8 26-8-26-26-8 26-8z"/><path d="M960 330l6 18 18 6-18 6-6 18-6-18-18-6 18-6z"/><path d="M90 520l7 22 22 7-22 7-7 22-7-22-22-7 22-7z"/>
+            </g>
+            <g fill="#ffe24d"><rect x="640" y="250" width="8" height="8"/><rect x="648" y="258" width="8" height="8"/><rect x="632" y="258" width="8" height="8"/><rect x="640" y="266" width="8" height="8"/></g>
+        </svg>
+    </div>
+
+    <header class="brandbar">
+        <a class="brand" href="#launcher" aria-label="EJ OS home">
+            <span class="brand-mark" aria-hidden="true">EJ</span>
+            <span class="brand-name">EJ OS<small>v2026.1</small></span>
+        </a>
+        <button class="tray-btn" type="button" data-act="theme" aria-pressed="false" aria-label="Toggle dusk wallpaper"><svg aria-hidden="true"><use href="#i-moon"/></svg></button>
     </header>
 
-    <main>
-        <section id="hero" class="hero">
-            <div class="hero-content">
-                <p class="eyebrow">Entry-level software engineer</p>
-                <h1>Learning by building small, honest, and full-stack projects.</h1>
-                <p class="lead">I'm Eric Edwards, an entry-level engineer who loves figuring out how frontend, backend,
-                    and security basics fit together. I scope projects realistically, document what I learn, and keep
-                    shipping to stay sharp.</p>
-                <div class="cta-row">
-                    <a class="btn primary" href="pages/work.html">Browse the work</a>
-                    <a class="btn ghost" href="assets/Eric E Resume SDE.pdf" download>Download resume</a>
-                </div>
-                <ul class="hero-metrics" aria-label="Key stats">
-                    <li><span>9</span> personal builds</li>
-                    <li><span>2</span> languages in progress</li>
-                    <li><span>∞</span> curiosity to learn</li>
-                </ul>
-            </div>
-            <div class="hero-visual" aria-hidden="true">
-                <div class="visual-card orbit-card">
-                    <p class="eyebrow subtle">Currently tinkering</p>
-                    <h3>RedSec AI</h3>
-                    <p>A Cybersecurity Red Teaming tool.</p>
-                </div>
-                <div class="visual-card stack-card">
-                    <p class="eyebrow subtle">Toolbox</p>
-                    <ul class="stack-list" aria-label="Tech stack">
-                                <li><strong>Languages</strong><span>Python · Golang · JavaScript · Java</span></li>
-                                <li><strong>Frameworks</strong><span>React · Node.js · Express</span></li>
-                                <li><strong>Frontend</strong><span>HTML/CSS</span></li>
-                                <li><strong>Databases</strong><span>PostgreSQL · Firebase · SQLITE</span></li>
-                                <li><strong>Tools</strong><span>Git · GitHub · VS Code</span></li>
-                    </ul>
-                </div>
-                <div class="visual-card signal-card">
-                    <p>Status</p>
-                    <strong>Open to small collaborations + guidance</strong>
-                    <small>Remote-friendly · Great fit for beginner-friendly teams</small>
-                </div>
-            </div>
-        </section>
+    <main class="stage" id="stage">
+        <nav class="launcher" id="launcher" aria-label="Applications">
+            <ul>
+                <li><a class="app" href="#projects" data-open="projects"><span class="app-icon c-projects"><svg aria-hidden="true"><use href="#i-folder"/></svg></span><span class="app-label">Projects</span></a></li>
+                <li><a class="app" href="#about" data-open="about"><span class="app-icon c-about is-dark"><svg aria-hidden="true"><use href="#i-smile"/></svg></span><span class="app-label">About Me</span></a></li>
+                <li><a class="app" href="#stack" data-open="stack"><span class="app-icon c-stack is-dark"><svg aria-hidden="true"><use href="#i-stack"/></svg></span><span class="app-label">My Stack</span></a></li>
+                <li><a class="app" href="#resume" data-open="resume"><span class="app-icon c-resume is-dark"><svg aria-hidden="true"><use href="#i-doc"/></svg></span><span class="app-label">Résumé</span></a></li>
+                <li><a class="app" href="#opensource" data-open="opensource"><span class="app-icon c-opensource"><svg aria-hidden="true"><use href="#i-star"/></svg></span><span class="app-label">Open Source</span></a></li>
+                <li><a class="app" href="#writeups" data-open="writeups"><span class="app-icon c-writeups"><svg aria-hidden="true"><use href="#i-lock"/></svg></span><span class="app-label">Writeups</span></a></li>
+                <li><a class="app" href="#certificates" data-open="certificates"><span class="app-icon c-certs is-dark"><svg aria-hidden="true"><use href="#i-badge"/></svg></span><span class="app-label">Certificates</span></a></li>
+                <li><a class="app" href="#github" data-open="github"><span class="app-icon c-github"><svg aria-hidden="true"><use href="#i-git"/></svg></span><span class="app-label">GitHub</span></a></li>
+                <li><a class="app" href="#contact" data-open="contact"><span class="app-icon c-contact"><svg aria-hidden="true"><use href="#i-mail"/></svg></span><span class="app-label">Contact</span></a></li>
+            </ul>
+        </nav>
 
-        <section id="about" class="section about">
-            <div class="section-heading">
-                <p class="eyebrow">About</p>
-                <h2>Entry-level engineer focused on fundamentals and clear documentation.</h2>
-                <p>I take on bite-sized projects so I can understand the basics of APIs, UI work, and security, then
-                    write up what I learned for the next build.</p>
+        <!-- Welcome: inline so the first paint has content -->
+        <section class="window welcome" id="welcome" data-app="welcome" aria-labelledby="t-welcome" tabindex="-1">
+            <div class="titlebar">
+                <button class="back" type="button" aria-label="Back to home"><svg aria-hidden="true"><use href="#i-back"/></svg></button>
+                <span class="ticon" aria-hidden="true"><svg><use href="#i-smile"/></svg></span>
+                <span class="title" id="t-welcome">Welcome.exe</span>
+                <div class="controls">
+                    <button class="ctl min" type="button" aria-label="Minimize Welcome"><svg aria-hidden="true"><use href="#i-min"/></svg></button>
+                    <button class="ctl max" type="button" aria-label="Maximize Welcome" aria-pressed="false"><svg aria-hidden="true"><use href="#i-max"/></svg></button>
+                    <button class="ctl close" type="button" aria-label="Close Welcome"><svg aria-hidden="true"><use href="#i-close"/></svg></button>
+                </div>
             </div>
-            <div class="about-grid">
-                <article class="profile-card">
-                    <dl>
-                        <div>
-                            <dt>Focus</dt>
-                            <dd>Full-stack platforms, APIs, developer tooling</dd>
-                        </div>
-                        <div>
-                            <dt>Currently learning</dt>
-                            <dd>C and Rust</dd>
-                        </div>
-                        <div>
-                            <dt>Based in</dt>
-                            <dd>United States · Remote worldwide</dd>
-                        </div>
-                    </dl>
-                </article>
-                <div class="story" id="ShortBio">
-                    <p>Hi, I'm Eric — an entry-level engineer working toward a software career. I've built focused experiments such as a remote admin tool prototype, a lightweight invoicing API, and a browser-based multiplayer game to understand how production apps come together.</p>
-                    <p>My process is straightforward: research the essentials, sketch a plan, deliver the MVP, then capture next-step improvements. Every project teaches me something new about structure, security, or design.</p>
+            <div class="window-body">
+                <p class="role">Software Engineer &amp; AI Builder</p>
+                <h1>Hey, I'm EJ!</h1>
+                <p class="lede">I build software and AI-assisted tools, from security dashboards to command-line games. Everything here is something I made to learn how it really works.</p>
+                <p class="hint"><svg aria-hidden="true"><use href="#i-arrow"/></svg><span>Explore my little corner of the internet. Pick an app to start.</span></p>
+                <div class="btn-row" style="margin-top:0">
+                    <a class="btn lime" href="#projects" data-open="projects">See my projects</a>
+                    <a class="btn chrome" href="#resume" data-open="resume">Open résumé</a>
+                </div>
+                <div class="mascot-row">
+                    <button class="mascot" type="button" data-act="mascot" aria-label="Chip, the pixel mascot. Press for a surprise."><svg aria-hidden="true"><use href="#i-smile"/></svg></button>
+                    <span class="meta">Meet Chip. Press the button for a surprise.</span>
                 </div>
             </div>
         </section>
 
-        <section class="section focus" id="focus">
-            <div class="section-heading">
-                <p class="eyebrow">Where I bring leverage</p>
-                <h2>What I'm practicing right now.</h2>
+        <!-- App windows: the shell lives here, the content lives in windows/*.html -->
+        <section class="window" id="projects" data-app="projects" aria-labelledby="t-projects" tabindex="-1">
+            <div class="titlebar">
+                <button class="back" type="button" aria-label="Back to home"><svg aria-hidden="true"><use href="#i-back"/></svg></button>
+                <span class="ticon" aria-hidden="true"><svg><use href="#i-folder"/></svg></span>
+                <span class="title" id="t-projects">Projects</span>
+                <div class="controls">
+                    <button class="ctl min" type="button" aria-label="Minimize Projects"><svg aria-hidden="true"><use href="#i-min"/></svg></button>
+                    <button class="ctl max" type="button" aria-label="Maximize Projects" aria-pressed="false"><svg aria-hidden="true"><use href="#i-max"/></svg></button>
+                    <button class="ctl close" type="button" aria-label="Close Projects"><svg aria-hidden="true"><use href="#i-close"/></svg></button>
+                </div>
             </div>
-            <div class="focus-grid">
-                <article class="focus-card">
-                    <span class="badge">Security basics</span>
-                    <h3>Recon dashboards & port checks</h3>
-                    <p>Experimenting with scanners and visual summaries to understand how network services respond.</p>
-                </article>
-                <article class="focus-card">
-                    <span class="badge">APIs & infra</span>
-                    <h3>Solid beginner backends</h3>
-                    <p>Building REST APIs with Node and Python, wiring auth later, and writing down what to improve next
-                        time.</p>
-                </article>
-                <article class="focus-card">
-                    <span class="badge">Realtime UX</span>
-                    <h3>Lightweight socket projects</h3>
-                    <p>Trying out chat and multiplayer ideas to practice state management and responsive UI patterns.
-                    </p>
-                </article>
+            <div class="window-body">
+                <div class="loader" aria-hidden="true"></div>
+                <div class="window-content" data-src="windows/projects.html">
+                    <h2>Projects</h2>
+                    <p><a href="https://github.com/EJ-Edwards" target="_blank" rel="noopener noreferrer">Browse my projects on GitHub</a>.</p>
+                </div>
             </div>
         </section>
 
-        <section class="section github-section" id="github">
-            <div class="section-heading">
-                <p class="eyebrow">GitHub</p>
-                <h2>Peek at the repos powering these projects.</h2>
-                <p>I document progress in public so you can see how I learn, refactor, and iterate from one build to
-                    the next.</p>
+        <section class="window" id="about" data-app="about" aria-labelledby="t-about" tabindex="-1">
+            <div class="titlebar">
+                <button class="back" type="button" aria-label="Back to home"><svg aria-hidden="true"><use href="#i-back"/></svg></button>
+                <span class="ticon" aria-hidden="true"><svg><use href="#i-smile"/></svg></span>
+                <span class="title" id="t-about">About Me</span>
+                <div class="controls">
+                    <button class="ctl min" type="button" aria-label="Minimize About Me"><svg aria-hidden="true"><use href="#i-min"/></svg></button>
+                    <button class="ctl max" type="button" aria-label="Maximize About Me" aria-pressed="false"><svg aria-hidden="true"><use href="#i-max"/></svg></button>
+                    <button class="ctl close" type="button" aria-label="Close About Me"><svg aria-hidden="true"><use href="#i-close"/></svg></button>
+                </div>
             </div>
-            <div class="github-panel">
-                <article class="github-card github-profile" aria-label="GitHub profile spotlight">
-                    <div class="github-handle">
-                        <img src="https://github.com/EJ-Edwards.png" alt="Eric Edwards GitHub avatar" class="github-avatar">
-                        <div>
-                            <p class="eyebrow subtle">github.com</p>
-                            <h3>@EJ-Edwards</h3>
-                            <p>Daily commits, writeups, and experiments in securing and scaling beginner-friendly
-                                stacks.</p>
-                        </div>
-                    </div>
-                    <a class="btn primary" href="https://github.com/EJ-Edwards" target="_blank"
-                        rel="noopener noreferrer">Visit the profile</a>
-                </article>
-
-                <article class="github-card github-stats" aria-label="GitHub stats">
-                    <ul class="github-stats-list">
-                        <li>
-                            <span class="stat-value" data-metric="public-repos">20+</span>
-                            <small>public repos</small>
-                        </li>
-                        <li>
-                            <span class="stat-value" data-metric="commits">300+</span>
-                            <small>commits logged</small>
-                        </li>
-                        <li>
-                            <span class="stat-value" data-metric="collabs">5</span>
-                            <small>open-source collabs</small>
-                        </li>
-                    </ul>
-                    <p class="eyebrow subtle">Always open to issues, feedback, and pair sessions.</p>
-                </article>
-
-                <article class="github-card github-repos" aria-label="Highlighted repositories">
-                    <h3>Best projects</h3>
-                    <ul class="repo-links" aria-label="Repository links">
-                        <li>
-                            <div>
-                                <strong>Remote Admin Tool</strong>
-                                <span>Python automation + telemetry</span>
-                            </div>
-                            <a class="inline-link" href="https://github.com/EJ-Edwards/Remote-Admin-Tool" target="_blank" rel="noopener noreferrer">View repo</a>
-                        </li>
-                        <li>
-                            <div>
-                                <strong>RedSec AI</strong>
-                                <span>AI assisted red teaming cybersecurity tool</span>
-                            </div>
-                            <a class="inline-link" href="https://redsec-ai.vercel.app/" target="_blank" rel="noopener noreferrer">Launch website</a>
-                        </li>
-                    </ul>
-                </article>
+            <div class="window-body">
+                <div class="loader" aria-hidden="true"></div>
+                <div class="window-content" data-src="windows/about.html">
+                    <h2>About me</h2>
+                    <p>I'm EJ, an early-career software engineer. See my <a href="assets/resume.pdf">résumé</a>.</p>
+                </div>
             </div>
-
         </section>
 
-        <section class="cta-panel" id="contact">
-            <div>
-                <p class="eyebrow">Next steps</p>
-                <h2>Need an entry-level engineer with real project reps?</h2>
-                <p>I'm looking for internships, junior roles, mentorship, or open-source issues that welcome
-                    early-career contributors. Share a repo or idea and I'll do my best to help.</p>
+        <section class="window" id="stack" data-app="stack" aria-labelledby="t-stack" tabindex="-1">
+            <div class="titlebar">
+                <button class="back" type="button" aria-label="Back to home"><svg aria-hidden="true"><use href="#i-back"/></svg></button>
+                <span class="ticon" aria-hidden="true"><svg><use href="#i-stack"/></svg></span>
+                <span class="title" id="t-stack">My Stack</span>
+                <div class="controls">
+                    <button class="ctl min" type="button" aria-label="Minimize My Stack"><svg aria-hidden="true"><use href="#i-min"/></svg></button>
+                    <button class="ctl max" type="button" aria-label="Maximize My Stack" aria-pressed="false"><svg aria-hidden="true"><use href="#i-max"/></svg></button>
+                    <button class="ctl close" type="button" aria-label="Close My Stack"><svg aria-hidden="true"><use href="#i-close"/></svg></button>
+                </div>
             </div>
-            <div class="cta-actions">
-                <a class="btn primary" href="pages/contact.html">Contact me</a>
-                <a class="inline-link" href="./assets/Profile (10).pdf" download>Grab the resume PDF</a>
+            <div class="window-body">
+                <div class="loader" aria-hidden="true"></div>
+                <div class="window-content" data-src="windows/stack.html">
+                    <h2>My stack</h2>
+                    <p>Python, Go, JavaScript, Java, Node.js, React and PostgreSQL.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="window" id="resume" data-app="resume" aria-labelledby="t-resume" tabindex="-1">
+            <div class="titlebar">
+                <button class="back" type="button" aria-label="Back to home"><svg aria-hidden="true"><use href="#i-back"/></svg></button>
+                <span class="ticon" aria-hidden="true"><svg><use href="#i-doc"/></svg></span>
+                <span class="title" id="t-resume">Résumé — resume.pdf</span>
+                <div class="controls">
+                    <button class="ctl min" type="button" aria-label="Minimize Résumé"><svg aria-hidden="true"><use href="#i-min"/></svg></button>
+                    <button class="ctl max" type="button" aria-label="Maximize Résumé" aria-pressed="false"><svg aria-hidden="true"><use href="#i-max"/></svg></button>
+                    <button class="ctl close" type="button" aria-label="Close Résumé"><svg aria-hidden="true"><use href="#i-close"/></svg></button>
+                </div>
+            </div>
+            <div class="window-body">
+                <div class="loader" aria-hidden="true"></div>
+                <div class="window-content" data-src="windows/resume.html">
+                    <h2>Résumé</h2>
+                    <p><a href="assets/resume.pdf" download>Download my résumé (PDF)</a></p>
+                </div>
+            </div>
+        </section>
+
+        <section class="window" id="contact" data-app="contact" aria-labelledby="t-contact" tabindex="-1">
+            <div class="titlebar">
+                <button class="back" type="button" aria-label="Back to home"><svg aria-hidden="true"><use href="#i-back"/></svg></button>
+                <span class="ticon" aria-hidden="true"><svg><use href="#i-mail"/></svg></span>
+                <span class="title" id="t-contact">Contact</span>
+                <div class="controls">
+                    <button class="ctl min" type="button" aria-label="Minimize Contact"><svg aria-hidden="true"><use href="#i-min"/></svg></button>
+                    <button class="ctl max" type="button" aria-label="Maximize Contact" aria-pressed="false"><svg aria-hidden="true"><use href="#i-max"/></svg></button>
+                    <button class="ctl close" type="button" aria-label="Close Contact"><svg aria-hidden="true"><use href="#i-close"/></svg></button>
+                </div>
+            </div>
+            <div class="window-body">
+                <div class="loader" aria-hidden="true"></div>
+                <div class="window-content" data-src="windows/contact.html">
+                    <h2>Contact</h2>
+                    <p><a href="mailto:ee1912136@gmail.com">Email me</a>.</p>
+                </div>
+            </div>
+        </section>
+        <section class="window" id="opensource" data-app="opensource" aria-labelledby="t-opensource" tabindex="-1">
+            <div class="titlebar">
+                <button class="back" type="button" aria-label="Back to home"><svg aria-hidden="true"><use href="#i-back"/></svg></button>
+                <span class="ticon" aria-hidden="true"><svg><use href="#i-star"/></svg></span>
+                <span class="title" id="t-opensource">Open Source</span>
+                <div class="controls">
+                    <button class="ctl min" type="button" aria-label="Minimize Open Source"><svg aria-hidden="true"><use href="#i-min"/></svg></button>
+                    <button class="ctl max" type="button" aria-label="Maximize Open Source" aria-pressed="false"><svg aria-hidden="true"><use href="#i-max"/></svg></button>
+                    <button class="ctl close" type="button" aria-label="Close Open Source"><svg aria-hidden="true"><use href="#i-close"/></svg></button>
+                </div>
+            </div>
+            <div class="window-body">
+                <div class="loader" aria-hidden="true"></div>
+                <div class="window-content" data-src="windows/opensource.html">
+                    <h2>Open source</h2>
+                    <p>Open source contributions to TJ Java, FlixelGDX and Pretendo. <a href="https://github.com/EJ-Edwards" target="_blank" rel="noopener noreferrer">See GitHub</a>.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="window" id="writeups" data-app="writeups" aria-labelledby="t-writeups" tabindex="-1">
+            <div class="titlebar">
+                <button class="back" type="button" aria-label="Back to home"><svg aria-hidden="true"><use href="#i-back"/></svg></button>
+                <span class="ticon" aria-hidden="true"><svg><use href="#i-lock"/></svg></span>
+                <span class="title" id="t-writeups">Writeups</span>
+                <div class="controls">
+                    <button class="ctl min" type="button" aria-label="Minimize Writeups"><svg aria-hidden="true"><use href="#i-min"/></svg></button>
+                    <button class="ctl max" type="button" aria-label="Maximize Writeups" aria-pressed="false"><svg aria-hidden="true"><use href="#i-max"/></svg></button>
+                    <button class="ctl close" type="button" aria-label="Close Writeups"><svg aria-hidden="true"><use href="#i-close"/></svg></button>
+                </div>
+            </div>
+            <div class="window-body">
+                <div class="loader" aria-hidden="true"></div>
+                <div class="window-content" data-src="windows/writeups.html">
+                    <h2>Writeups</h2>
+                    <p>Security writeups: Net Sec Challenge, Signed Messages and Smol. Enable JavaScript to read them.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="window" id="certificates" data-app="certificates" aria-labelledby="t-certificates" tabindex="-1">
+            <div class="titlebar">
+                <button class="back" type="button" aria-label="Back to home"><svg aria-hidden="true"><use href="#i-back"/></svg></button>
+                <span class="ticon" aria-hidden="true"><svg><use href="#i-badge"/></svg></span>
+                <span class="title" id="t-certificates">Certificates</span>
+                <div class="controls">
+                    <button class="ctl min" type="button" aria-label="Minimize Certificates"><svg aria-hidden="true"><use href="#i-min"/></svg></button>
+                    <button class="ctl max" type="button" aria-label="Maximize Certificates" aria-pressed="false"><svg aria-hidden="true"><use href="#i-max"/></svg></button>
+                    <button class="ctl close" type="button" aria-label="Close Certificates"><svg aria-hidden="true"><use href="#i-close"/></svg></button>
+                </div>
+            </div>
+            <div class="window-body">
+                <div class="loader" aria-hidden="true"></div>
+                <div class="window-content" data-src="windows/certificates.html">
+                    <h2>Certificates</h2>
+                    <p>Google Cybersecurity Certificate, All Star Code Certificate and Google AI Essentials. Enable JavaScript to view them.</p>
+                </div>
+            </div>
+        </section>
+        <section class="window" id="github" data-app="github" aria-labelledby="t-github" tabindex="-1">
+            <div class="titlebar">
+                <button class="back" type="button" aria-label="Back to home"><svg aria-hidden="true"><use href="#i-back"/></svg></button>
+                <span class="ticon" aria-hidden="true"><svg><use href="#i-git"/></svg></span>
+                <span class="title" id="t-github">GitHub</span>
+                <div class="controls">
+                    <button class="ctl min" type="button" aria-label="Minimize GitHub"><svg aria-hidden="true"><use href="#i-min"/></svg></button>
+                    <button class="ctl max" type="button" aria-label="Maximize GitHub" aria-pressed="false"><svg aria-hidden="true"><use href="#i-max"/></svg></button>
+                    <button class="ctl close" type="button" aria-label="Close GitHub"><svg aria-hidden="true"><use href="#i-close"/></svg></button>
+                </div>
+            </div>
+            <div class="window-body">
+                <div class="loader" aria-hidden="true"></div>
+                <div class="window-content" data-src="windows/github.html">
+                    <h2>GitHub</h2>
+                    <p><a href="https://github.com/EJ-Edwards" target="_blank" rel="noopener noreferrer">Visit @EJ-Edwards on GitHub</a></p>
+                </div>
             </div>
         </section>
     </main>
 
-    <footer class="site-footer">
-        <small>© 2025–2026 Eric Edwards. All rights reserved.</small>
+    <div class="startmenu" id="startMenu" hidden>
+        <div class="sm-head">
+            <img src="profilepic.png" alt="" width="44" height="44">
+            <div><strong>EJ</strong><small>Software Engineer &amp; AI Builder</small></div>
+        </div>
+        <div class="sm-cols">
+            <div class="sm-col">
+                <h2>Programs</h2>
+                <button class="sm-item" type="button" data-open="welcome"><span class="app-icon c-resume is-dark"><svg aria-hidden="true"><use href="#i-smile"/></svg></span>Welcome</button>
+                <button class="sm-item" type="button" data-open="projects"><span class="app-icon c-projects"><svg aria-hidden="true"><use href="#i-folder"/></svg></span>Projects</button>
+                <button class="sm-item" type="button" data-open="about"><span class="app-icon c-about is-dark"><svg aria-hidden="true"><use href="#i-smile"/></svg></span>About Me</button>
+                <button class="sm-item" type="button" data-open="stack"><span class="app-icon c-stack is-dark"><svg aria-hidden="true"><use href="#i-stack"/></svg></span>My Stack</button>
+                <button class="sm-item" type="button" data-open="resume"><span class="app-icon c-resume is-dark"><svg aria-hidden="true"><use href="#i-doc"/></svg></span>Résumé</button>
+                <button class="sm-item" type="button" data-open="opensource"><span class="app-icon c-opensource"><svg aria-hidden="true"><use href="#i-star"/></svg></span>Open Source</button>
+                <button class="sm-item" type="button" data-open="writeups"><span class="app-icon c-writeups"><svg aria-hidden="true"><use href="#i-lock"/></svg></span>Writeups</button>
+                <button class="sm-item" type="button" data-open="certificates"><span class="app-icon c-certs is-dark"><svg aria-hidden="true"><use href="#i-badge"/></svg></span>Certificates</button>
+                <button class="sm-item" type="button" data-open="github"><span class="app-icon c-github"><svg aria-hidden="true"><use href="#i-git"/></svg></span>GitHub</button>
+                <button class="sm-item" type="button" data-open="contact"><span class="app-icon c-contact"><svg aria-hidden="true"><use href="#i-mail"/></svg></span>Contact</button>
+            </div>
+            <div class="sm-col">
+                <h2>Quick links</h2>
+                <a class="sm-item" href="assets/resume.pdf" download>Download résumé</a>
+                <a class="sm-item" href="mailto:ee1912136@gmail.com">Email me</a>
+                <a class="sm-item" href="https://github.com/EJ-Edwards" target="_blank" rel="noopener noreferrer">GitHub profile<span class="sr-only"> (opens in a new tab)</span></a>
+            </div>
+        </div>
+        <div class="sm-foot">
+            <button class="btn chrome" type="button" data-act="show-desktop">Show desktop</button>
+            <button class="btn chrome" type="button" data-act="shortcuts">Shortcuts</button>
+        </div>
+    </div>
+
+    <footer class="taskbar" id="taskbar">
+        <button class="start" id="startBtn" type="button" aria-expanded="false" aria-controls="startMenu"><svg aria-hidden="true"><use href="#i-spark"/></svg>start</button>
+        <nav class="dock" aria-label="Quick navigation">
+            <button type="button" data-home data-act="home" aria-current="true"><svg aria-hidden="true"><use href="#i-home"/></svg><span>Home</span></button>
+            <button type="button" data-open="projects" aria-current="false"><svg aria-hidden="true"><use href="#i-folder"/></svg><span>Projects</span></button>
+            <button type="button" data-open="about" aria-current="false"><svg aria-hidden="true"><use href="#i-smile"/></svg><span>About</span></button>
+            <button type="button" data-open="stack" aria-current="false"><svg aria-hidden="true"><use href="#i-stack"/></svg><span>Stack</span></button>
+            <button type="button" data-open="resume" aria-current="false"><svg aria-hidden="true"><use href="#i-doc"/></svg><span>Résumé</span></button>
+            <button type="button" data-open="contact" aria-current="false"><svg aria-hidden="true"><use href="#i-mail"/></svg><span>Contact</span></button>
+        </nav>
+        <div class="tasks" id="tasks" role="group" aria-label="Open windows"></div>
+        <div class="tray">
+            <button class="tray-btn" type="button" data-act="theme" aria-pressed="false" aria-label="Toggle dusk wallpaper"><svg aria-hidden="true"><use href="#i-moon"/></svg></button>
+            <button class="tray-btn" type="button" data-act="shortcuts" aria-label="Keyboard shortcuts"><span aria-hidden="true">?</span></button>
+            <time class="clock" id="clock"></time>
+        </div>
     </footer>
+
+    <div class="toasts" id="toasts" role="status" aria-live="polite"></div>
 </body>
 
 </html>
-
-

@@ -1,0 +1,100 @@
+<div class="crumbs"><button class="btn chrome" type="button" data-act="close-sub"><svg aria-hidden="true"><use href="#i-back"/></svg>All writeups</button></div>
+<p class="mono-label">Writeup</p>
+<h2>THM: Net Sec Challenge</h2>
+<p class="lede">A walkthrough of the TryHackMe Net Sec Challenge covering Nmap scanning, network service enumeration, and protocol analysis.</p>
+<div class="badge-list"><span class="badge">TryHackMe</span><span class="badge">Network Security</span><span class="badge">Nmap</span><span class="badge">Enumeration</span></div>
+
+<h3>Overview</h3>
+<p>The NetSec Challenge on TryHackMe is a medium-difficulty room focused on network security fundamentals, including reconnaissance, service enumeration, and protocol analysis. It emphasizes identifying exposed services, interacting with them using tools such as Nmap, Telnet, and Hydra, and understanding how different network protocols can be leveraged during an assessment. The challenge reinforces structured enumeration techniques and practical analysis of network-based vulnerabilities.</p>
+
+<h3>Answering the challenge</h3>
+
+<h4>Challenge 1 — What is the flag hidden in the HTTP server header?</h4>
+<p><strong>Step 1 —</strong> Connect to the target's HTTP service on port 80 using <code>telnet</code>:</p>
+<pre><code>telnet 10.64.139.34 80</code></pre>
+<p><strong>Step 2 —</strong> Once connected, send a manual HTTP GET request with a <code>Host</code> header, then press Enter twice to submit:</p>
+<pre><code>GET / HTTP/1.1
+host: telnet</code></pre>
+<p><strong>Step 3 —</strong> Examine the response headers. The <code>Server</code> header contains the flag:</p>
+<pre><code>HTTP/1.1 200 OK
+Vary: Accept-Encoding
+Content-Type: text/html
+Accept-Ranges: bytes
+ETag: "229449419"
+Last-Modified: Tue, 14 Sep 2021 07:33:09 GMT
+Content-Length: 226
+Date: Thu, 19 Mar 2026 13:03:26 GMT
+Server: lighttpd THM{web_server_25352}</code></pre>
+<img class="embed-shot" src="assets/screenshots/netsec/netsec-telnet-http.png" alt="Terminal: telnet to port 80, a manual GET request, and the response headers with the flag in the Server header" loading="lazy">
+<p><strong>Flag:</strong> <code>THM{web_server_25352}</code></p>
+
+<h4>Challenge 2 — What is the flag hidden in the SSH server header?</h4>
+<p><strong>Step 1 —</strong> Connect to the target's SSH service on port 22 using <code>telnet</code>:</p>
+<pre><code>telnet 10.64.139.34 22</code></pre>
+<img class="embed-shot" src="assets/screenshots/netsec/netsec-ssh.png" alt="Terminal: telnet to port 22 returning the SSH banner with the flag" loading="lazy">
+<p><strong>Flag:</strong> <code>THM{946219583339}</code></p>
+
+<h4>Challenge 3 — We have an FTP server listening on a nonstandard port. What is the version of the FTP server?</h4>
+<p><strong>Step 1 —</strong> Scan the target with <code>nmap</code> to find the FTP server on the nonstandard port and read its version:</p>
+<pre><code>nmap -sS -sV 10.64.139.34 -p 1-11000</code></pre>
+<img class="embed-shot" src="assets/screenshots/netsec/netsec-ftp.png" alt="Terminal: Nmap scan results listing open ports, including vsftpd 3.0.5 on port 10021" loading="lazy">
+<p><strong>Version:</strong> <code>vsftpd 3.0.5</code></p>
+
+<h4>Challenge 4 — We learned two usernames using social engineering: eddie and quinn. What is the flag hidden in one of these two account files and accessible via FTP?</h4>
+<p><strong>Step 1 —</strong> Use <code>hydra</code> to brute-force the FTP credentials for user <code>eddie</code> on the nonstandard FTP port 10021:</p>
+<pre><code>hydra -l eddie -P /usr/share/wordlists/rockyou.txt 10.64.139.34 ftp -s 10021 -v</code></pre>
+<p>Hydra finds the password: <code>eddie:jordan</code></p>
+<p><strong>Step 2 —</strong> Do the same for user <code>quinn</code>:</p>
+<pre><code>hydra -l quinn -P /usr/share/wordlists/rockyou.txt 10.64.139.34 ftp -s 10021 -v</code></pre>
+<p>Hydra finds the password: <code>quinn:andrea</code></p>
+<img class="embed-shot" src="assets/screenshots/netsec/netsec-social.png" alt="Two terminals running Hydra against the FTP service, finding eddie:jordan and quinn:andrea" loading="lazy">
+<p><strong>Step 3 —</strong> Log in to the FTP server as <code>eddie</code> using the cracked credentials:</p>
+<pre><code>ftp 10.64.139.34 10021
+Name: eddie
+Password: jordan</code></pre>
+<p>Login successful. List files with <code>ls</code> — eddie's directory appears empty.</p>
+<img class="embed-shot" src="assets/screenshots/netsec/netsec-eddie.png" alt="Terminal: FTP login as eddie succeeds and the directory listing is empty" loading="lazy">
+<p><strong>Step 4 —</strong> Log in as <code>quinn</code> and check for the flag file:</p>
+<pre><code>ftp 10.64.139.34 10021
+Name: quinn
+Password: andrea</code></pre>
+<p>Login successful. Running <code>ls</code> reveals a file called <code>ftp_flag.txt</code>:</p>
+<pre><code>ftp&gt; ls
+-rw-rw-r--    1 1002     1002           18 Sep 20  2021 ftp_flag.txt</code></pre>
+<p>Download the flag file with <code>get</code>:</p>
+<pre><code>ftp&gt; get ftp_flag.txt</code></pre>
+<img class="embed-shot" src="assets/screenshots/netsec/netsec-quinn.png" alt="Terminal: FTP login as quinn succeeds and the listing shows ftp_flag.txt" loading="lazy">
+<p><strong>Step 5 —</strong> Switch to ASCII mode and download the flag file:</p>
+<pre><code>ftp&gt; ascii
+200 Switching to ASCII mode.
+ftp&gt; get ftp_flag.txt
+local: ftp_flag.txt remote: ftp_flag.txt
+226 Transfer complete.
+18 bytes received in 0.00 secs (30.8388 kB/s)
+ftp&gt; exit</code></pre>
+<img class="embed-shot" src="assets/screenshots/netsec/netsec-quinget.png" alt="Terminal: switching FTP to ASCII mode and downloading ftp_flag.txt, with a transfer-complete message" loading="lazy">
+<p><strong>Step 6 —</strong> View the contents of the downloaded flag file:</p>
+<pre><code>cat ftp_flag.txt</code></pre>
+<img class="embed-shot" src="assets/screenshots/netsec/netsec-quinviewfile.png" alt="Terminal: cat ftp_flag.txt printing the flag" loading="lazy">
+<p><strong>Flag:</strong> <code>THM{321452667098}</code></p>
+
+<h4>Challenge 5 — Browsing to http://10.64.139.34:8080 displays a small challenge that will give you a flag once you solve it. What is the flag?</h4>
+<p><strong>Step 1 —</strong> Open a web browser and navigate to <code>http://10.64.139.34:8080</code>. The page presents a challenge requiring you to scan the target without being detected.</p>
+<p><strong>Step 2 —</strong> Use an Nmap NULL scan to probe the target stealthily, avoiding detection by the web challenge:</p>
+<pre><code>nmap -sN 10.64.139.34</code></pre>
+<img class="embed-shot" src="assets/screenshots/netsec/netsec-covert.png" alt="Left: an Nmap NULL scan in a terminal. Right: the challenge page showing 0% chance of scan being detected and the task answer" loading="lazy">
+<p><strong>Step 3 —</strong> Refresh the page at <code>http://10.64.139.34:8080</code> to collect the flag.</p>
+<p><strong>Flag:</strong> <code>THM{f7443f99}</code></p>
+
+<h3>Summary</h3>
+<p>I learned passive reconnaissance techniques and how to use various tools to gather information without being detected.</p>
+
+<h3>Tools used</h3>
+<ul class="bullet-list">
+    <li>Nmap — port scanning and service detection.</li>
+    <li>Telnet / Netcat — manual service interaction.</li>
+    <li>Hydra — credential brute-forcing (if applicable).</li>
+</ul>
+<div class="btn-row">
+    <button class="btn chrome" type="button" data-act="close-sub"><svg aria-hidden="true"><use href="#i-back"/></svg>Back to Writeups</button>
+</div>
