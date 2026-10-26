@@ -23,9 +23,10 @@
         opensource: { label: 'Open Source', icon: 'i-star' },
         writeups: { label: 'Writeups', icon: 'i-lock' },
         certificates: { label: 'Certificates', icon: 'i-badge' },
-        github: { label: 'GitHub', icon: 'i-git' }
+        github: { label: 'GitHub', icon: 'i-git' },
+        credits: { label: 'Credits', icon: 'i-spark' }
     };
-    const SHORTCUT_ORDER = ['projects', 'about', 'stack', 'resume', 'contact', 'opensource', 'writeups', 'certificates', 'github'];
+    const SHORTCUT_ORDER = ['projects', 'about', 'stack', 'resume', 'contact', 'opensource', 'writeups', 'certificates', 'github', 'credits'];
 
     const OPEN_TOASTS = {
         projects: ['projects.exe', 'Ten builds loaded. Pick a card for the details.'],
@@ -36,7 +37,8 @@
         opensource: ['opensource.exe', 'Three pull requests, each with a write-up.'],
         writeups: ['writeups.exe', 'Three lab walkthroughs loaded.'],
         certificates: ['certificates.exe', 'Each certificate links to its proof.'],
-        github: ['github.exe', 'Profile, stats and best projects loaded.']
+        github: ['github.exe', 'Profile, stats and best projects loaded.'],
+        credits: ['credits.exe', 'Press play for music and narration.']
     };
 
     const PROJECTS = {
@@ -174,6 +176,51 @@
         history.replaceState(null, '', url);
     };
 
+    /* ---------- Credits audio ---------- */
+    const credits = { music: null, voice: null, playing: false };
+    const creditsUI = () => {
+        const host = wins.credits;
+        return host ? { roll: $('[data-credits-roll]', host), button: $('[data-act="credits-play"]', host), label: $('[data-credits-label]', host), status: $('[data-credits-status]', host) } : {};
+    };
+    const stopCredits = () => {
+        credits.playing = false;
+        [credits.music, credits.voice].forEach((audio) => { if (audio) { audio.pause(); audio.currentTime = 0; } });
+        const { roll, button, label, status } = creditsUI();
+        if (!button) return;
+        roll.classList.remove('is-rolling');
+        button.setAttribute('aria-pressed', 'false');
+        label.textContent = 'Play credits';
+        status.textContent = '';
+    };
+    const playCredits = async () => {
+        const { roll, button, label, status } = creditsUI();
+        if (!button) return;
+        if (!credits.music) {
+            credits.music = new Audio('assets/audio/credits-music.mp3');
+            credits.music.loop = true;
+            credits.music.volume = 0.35;
+            credits.voice = new Audio('assets/audio/credits-announcer.mp3');
+            credits.voice.addEventListener('ended', stopCredits);
+        }
+        try {
+            await Promise.all([credits.music.play(), credits.voice.play()]);
+        } catch (error) {
+            stopCredits();
+            status.textContent = 'Audio could not be played.';
+            return;
+        }
+        credits.playing = true;
+        const duration = credits.voice.duration;
+        roll.style.setProperty('--roll-time', `${Number.isFinite(duration) ? duration : 18}s`);
+        roll.scrollTop = 0;
+        roll.classList.remove('is-rolling');
+        void roll.offsetWidth;
+        roll.classList.add('is-rolling');
+        button.setAttribute('aria-pressed', 'true');
+        label.textContent = 'Stop credits';
+        status.textContent = 'Credits playing.';
+    };
+
     /* ---------- Window management ---------- */
     const hideWindow = (id) => {
         const win = wins[id];
@@ -183,6 +230,7 @@
         state.open = state.open.filter((app) => app !== id);
         state.minimized.delete(id);
         if (id === 'projects') showList(false);
+        if (id === 'credits') stopCredits();
         closeSub(id, { focus: false, hash: false });
     };
 
@@ -500,6 +548,7 @@
         else if (type === 'close-sub') closeSub(action.closest('.window').dataset.app);
         else if (type === 'show-desktop') showDesktop();
         else if (type === 'theme') toggleTheme();
+        else if (type === 'credits-play') { if (credits.playing) stopCredits(); else playCredits(); }
         else if (type === 'shortcuts') { closeStart(); showShortcuts(); }
         else if (type === 'home') goHome();
         else if (type === 'mascot') {
