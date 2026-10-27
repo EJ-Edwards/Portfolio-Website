@@ -177,7 +177,7 @@
     };
 
     /* ---------- Credits audio ---------- */
-    const credits = { music: null, voice: null, playing: false };
+    const credits = { music: null, voice: null, ctx: null, playing: false };
     const creditsUI = () => {
         const host = wins.credits;
         return host ? { roll: $('[data-credits-roll]', host), button: $('[data-act="credits-play"]', host), label: $('[data-credits-label]', host), status: $('[data-credits-status]', host) } : {};
@@ -197,12 +197,22 @@
         if (!button) return;
         if (!credits.music) {
             credits.music = new Audio('assets/audio/credits-music.mp3');
-            credits.music.volume = 0.35;
             credits.music.addEventListener('ended', stopCredits);
             credits.voice = new Audio('assets/audio/credits-announcer.mp3');
+            // iOS ignores audio.volume, so route the music through a gain node to keep it under the voice.
+            const AudioCtx = window.AudioContext || window.webkitAudioContext;
+            if (AudioCtx) {
+                credits.ctx = new AudioCtx();
+                const gain = credits.ctx.createGain();
+                gain.gain.value = 0.35;
+                credits.ctx.createMediaElementSource(credits.music).connect(gain);
+                gain.connect(credits.ctx.destination);
+            } else {
+                credits.music.volume = 0.35;
+            }
         }
         try {
-            await Promise.all([credits.music.play(), credits.voice.play()]);
+            await Promise.all([credits.ctx ? credits.ctx.resume() : null, credits.music.play(), credits.voice.play()]);
         } catch (error) {
             stopCredits();
             status.textContent = 'Audio could not be played.';
@@ -211,6 +221,7 @@
         credits.playing = true;
         const duration = Math.max(credits.music.duration || 0, credits.voice.duration || 0);
         roll.style.setProperty('--roll-time', `${duration > 0 ? duration : 18}s`);
+        roll.style.setProperty('--roll-h', `${roll.clientHeight}px`);
         roll.scrollTop = 0;
         roll.classList.remove('is-rolling');
         void roll.offsetWidth;
@@ -219,6 +230,7 @@
         label.textContent = 'Stop credits';
         status.textContent = 'Credits playing.';
     };
+    document.addEventListener('visibilitychange', () => { if (document.hidden && credits.playing) stopCredits(); });
 
     /* ---------- Window management ---------- */
     const hideWindow = (id) => {
