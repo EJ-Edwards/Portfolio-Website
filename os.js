@@ -197,10 +197,9 @@
         if (!button) return;
         if (!credits.music) {
             credits.music = new Audio('assets/audio/credits-music.mp3');
-            credits.music.loop = true;
             credits.music.volume = 0.35;
+            credits.music.addEventListener('ended', stopCredits);
             credits.voice = new Audio('assets/audio/credits-announcer.mp3');
-            credits.voice.addEventListener('ended', stopCredits);
         }
         try {
             await Promise.all([credits.music.play(), credits.voice.play()]);
@@ -210,8 +209,8 @@
             return;
         }
         credits.playing = true;
-        const duration = credits.voice.duration;
-        roll.style.setProperty('--roll-time', `${Number.isFinite(duration) ? duration : 18}s`);
+        const duration = Math.max(credits.music.duration || 0, credits.voice.duration || 0);
+        roll.style.setProperty('--roll-time', `${duration > 0 ? duration : 18}s`);
         roll.scrollTop = 0;
         roll.classList.remove('is-rolling');
         void roll.offsetWidth;
