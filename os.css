@@ -277,6 +277,10 @@ img, svg { display: block; max-width: 100%; }
 .gh-profile p:last-child { margin: 0; }
 .repo-list { display: grid; gap: var(--space-sm); margin-top: var(--space-sm); }
 .repo-list li { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--space-sm); padding: var(--space-sm) var(--space-md); border-radius: var(--radius-lg); background: var(--color-bg-panel-chrome); border: 2px solid var(--chrome-300); }
+.see-all { margin-top: var(--space-md); padding: var(--space-sm) var(--space-md); border-radius: var(--radius-lg); background: var(--grad-aqua); border: 2px solid var(--chrome-300); }
+.see-all strong { display: block; font: 600 1.05rem/1.2 var(--font-display); }
+.see-all span { display: block; color: var(--ink-600); font-size: 0.9375rem; }
+.see-all .btn-row { margin-top: var(--space-sm); }
 .repo-list strong { display: block; font: 600 1.05rem/1.2 var(--font-display); }
 .repo-list span { display: block; color: var(--ink-600); font-size: 0.9375rem; }
 .resume-doc { margin-top: var(--space-md); padding: var(--space-md); border-radius: var(--radius-lg); background: #fff; border: 2px solid var(--chrome-300); box-shadow: var(--shadow-card); }

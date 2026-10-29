@@ -29,7 +29,7 @@
     const SHORTCUT_ORDER = ['projects', 'about', 'stack', 'resume', 'contact', 'opensource', 'writeups', 'certificates', 'github', 'credits'];
 
     const OPEN_TOASTS = {
-        projects: ['projects.exe', 'Ten builds loaded. Pick a card for the details.'],
+        projects: ['projects.exe', 'Five builds loaded. Pick a card for the details.'],
         about: ['about_me.txt', 'Nice to meet you!'],
         stack: ['my_stack.dll', 'Tools loaded. Tap a group to expand it.'],
         resume: ['resume.pdf', 'Use the toolbar to download a copy.'],
@@ -37,18 +37,11 @@
         opensource: ['opensource.exe', 'Three pull requests, each with a write-up.'],
         writeups: ['writeups.exe', 'Three lab walkthroughs loaded.'],
         certificates: ['certificates.exe', 'Each certificate links to its proof.'],
-        github: ['github.exe', 'Profile, stats and best projects loaded.'],
+        github: ['github.exe', 'Profile, stats and featured projects loaded.'],
         credits: ['credits.exe', 'Press play for music and narration.']
     };
 
     const PROJECTS = {
-        'redsec-ai': {
-            name: 'RedSec AI', kind: 'Cybersecurity', thumb: 'chat', tech: ['Next.js', 'Python', 'Dart'],
-            blurb: 'AI-powered security assistant for red teams, built with modern tooling and a secure frontend dashboard.',
-            problem: 'Red-team work involves a lot of repetitive research and triage. RedSec AI explores how an AI assistant can help with that inside a dashboard.',
-            built: 'A security assistant for red teams with a secure frontend dashboard.',
-            live: 'https://redsec-ai.vercel.app/'
-        },
         'port-intel': {
             name: 'Port Intel', kind: 'Recon', thumb: 'dash', tech: ['React', 'Node.js', 'Express', 'PostgreSQL'],
             blurb: 'Cloud-first reconnaissance dashboard that turns port scan data into actionable insights for security teams.',
@@ -69,34 +62,6 @@
             problem: 'Managing machines remotely needs safe access control and good visibility.',
             built: 'A remote management tool with telemetry, role-based access control and command execution, driven from a lightweight web dashboard.',
             repo: 'https://github.com/EJ-Edwards/Remote-Admin-Tool'
-        },
-        'cyber-battle': {
-            name: 'Cyber-Battle', kind: 'CLI game', thumb: 'term', term: '$ ./cyber-battle', tech: ['Go'],
-            blurb: 'Cybersecurity simulation game built for practicing attack and defense concepts in a command-line environment.',
-            problem: 'Attack and defense concepts are easier to learn by practicing them.',
-            built: 'A command-line cybersecurity simulation game for practicing attack and defense concepts.',
-            repo: 'https://github.com/EJ-Edwards/Cyber-Battle'
-        },
-        'star-explorer': {
-            name: 'Star Explorer', kind: 'CLI game', thumb: 'term', term: '> explore --sky', tech: ['Node.js', 'Go'],
-            blurb: 'CLI-based exploration game with immersive terminal-style interactions and lightweight game state persistence.',
-            problem: 'Terminal games need state that survives between sessions.',
-            built: 'A CLI exploration game with immersive terminal-style interaction and lightweight game-state persistence.',
-            repo: 'https://github.com/EJ-Edwards/Star-Explorer'
-        },
-        'dev-tool-box': {
-            name: 'Dev-Tool-Box CLI', kind: 'Tooling', thumb: 'code', code: 'toolbox run\n  --format\n  --lint', tech: ['Node.js', 'Python', 'C#'],
-            blurb: 'Toolkit for developers with utilities, productivity helpers, and small automation scripts in one package.',
-            problem: 'Small developer chores add up when they are scattered across separate scripts.',
-            built: 'A toolkit that bundles utilities, productivity helpers and small automation scripts in one package.',
-            repo: 'https://github.com/EJ-Edwards/Dev-Tool-Box-CLI'
-        },
-        aptoolkit: {
-            name: 'APToolkit', kind: 'Tooling', thumb: 'term', term: '# aptoolkit --recon', tech: ['Python', 'Go'],
-            blurb: 'APT-inspired operations toolkit built for defensive research, automation, and red team prototyping.',
-            problem: 'Defensive research and red-team prototyping both need repeatable tooling.',
-            built: 'An APT-inspired operations toolkit for defensive research, automation and red team prototyping.',
-            repo: 'https://github.com/EJ-Edwards/APToolkit'
         },
         'ej-student-system': {
             name: 'EJ Student System', kind: 'Java', thumb: 'code', code: 'class Student {\n  id; name;\n}', tech: ['Java'],
